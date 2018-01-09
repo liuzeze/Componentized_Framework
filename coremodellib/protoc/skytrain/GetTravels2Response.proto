@@ -1,0 +1,156 @@
+//指定proto版本，与服务接口一致
+syntax = "proto2";
+
+//指定java类的包名
+option java_package = "gctraveltools.jsj.com.cn.coremodellib.model.proto.skytrain";
+
+//message.proto文件中的每个message都生成一个对应的.java。设为fasle时只导出一个.java类文件，所有message都以内部类的形式出现
+option java_multiple_files = true;
+//指定上一级引用的proto，由于接口的不统一，所以引用的时候一定要注意接口文档中的引用
+import "BaseResponse.proto";
+//GetTravels  获取行程列表
+//http://jsj-recommend-test.jsjinfo.cn/v2/Hosts/TravelApi.aspx?help&m1=JSJ.PayRecommend.Svr.API.TravelApi.GetTravels&rsdll=JSJ.PayRecommend.Svr.dll&rqdll=JSJ.PayRecommend.Svr.dll
+
+message BoardingDto {
+   optional int32 BoardingID = 1 [default = 0];
+   optional int32 AdditionalServicesID = 2 [default = 0];
+   optional string BoardingEncryptParam = 3;
+   optional string BoardingServiceName = 4;
+   optional double SalePrice = 5 [default = 0];
+   optional int32 BoardingType = 6 [default = 0];
+   optional string OwnerEmployeeMobile = 7;
+}
+message GetTravels2Response {
+   optional BaseResponse BaseResponse = 1;
+   repeated TravelDto2 TravelDto2s = 2;
+   optional int32 TotalCount = 3 [default = 0];
+}
+enum GroupServiceType {
+   GroupServiceTypeUnSetting = 0;
+   GroupServiceTypeAirport = 1;
+   GroupServiceTypeTrain = 2;
+}
+message MoVIPHallAuxType {
+   optional int32 AuxTypeID = 1 [default = 0];
+   optional string AuxTypeName = 2;
+   optional string IconPath = 3;
+   optional int32 IsFree = 4 [default = 0];
+}
+message NodeDto {
+   optional string Title = 1;
+   optional string Desc = 2;
+   optional int64 TimeStamp = 3 [default = 0];
+   optional NodeType NodeType = 4 [default = NodeTypeUnSetting];
+   optional string Ext = 5;
+   optional string Icon = 6;
+}
+enum NodeType {
+   NodeTypeUnSetting = 0;
+   NodeTypeCancel = 50;
+   NodeTypeSvr = 100;
+   NodeTypeSvrVipHall = 110;
+   NodeTypeSvrBoarding = 120;
+   NodeTypeSvrVipChannel = 130;
+   NodeTypeDeptAirport = 150;
+   NodeTypeCheckIn = 170;
+   NodeTypeGate = 200;
+   NodeTypeFly = 300;
+   NodeTypeLand = 400;
+   NodeTypeBaggage = 500;
+   NodeTypeClaims = 600;
+}
+enum OrderIdentity {
+   UnOrder = 0;
+   BigOrder = 1;
+   FinnalOrder = 2;
+}
+enum PaymentTravelOrderStatus {
+   UnSet = 0;
+   UnPay = 10;
+   Paying = 20;
+   PaySuccessed = 30;
+   PayFailed = 40;
+}
+message TerminalServiceDto {
+   optional string AirportTerminalName = 1;
+   repeated VVIPHallDto VIPHallDtos = 2;
+   repeated BoardingDto BoardingDtos = 3;
+   repeated VipChannelDto VipChannelDtos = 4;
+   repeated VVIPHallDto VVIPHallDtos = 5;
+   optional bool HasVipBoardingService = 6 [default = false];
+}
+message TravelDto2 {
+   optional string TravelTitle = 1;
+   optional TravelType TravelType = 2 [default = UnSetting];
+   optional double Amount = 3 [default = 0];
+   optional int32 Status = 4 [default = 0];
+   optional PaymentTravelOrderStatus PaymentTravelOrderStatus = 5 [default = UnSet];
+   optional string ContactMobile = 6;
+   optional string ContactName = 7;
+   optional string Ext = 8;
+   repeated TravelDto2 TravelDto2s = 9;
+   optional OrderIdentity OrderIdentity = 10 [default = UnOrder];
+   optional int32 JSJID = 11 [default = 0];
+   optional string ICAOCode = 12;
+   repeated TerminalServiceDto TerminalServiceDtos = 13;
+   optional bool IsProvideService = 14 [default = false];
+   optional string TrainOrRailName = 15;
+   optional string TrainOrRailCode = 16;
+   optional GroupServiceType GroupServiceType = 17 [default = GroupServiceTypeUnSetting];
+   optional int64 TravelDayStamp = 18 [default = 0];
+   optional string FlightNumber = 19;
+   repeated NodeDto NoteDtos = 20;
+   optional int32 TravelID = 21 [default = 0];
+   optional string JSJOrderID = 22;
+}
+enum TravelType {
+   UnSetting = 0;
+   AirportTravel = 1;
+   RailportTravel = 2;
+   VipHall = 3;
+   Boarding = 4;
+   VipChannel = 5;
+   VVipHall = 6;
+   Assistant = 7;
+   CombinedOrder = 128;
+}
+enum VIPHallServiceType {
+   ServiceTypeVIPHall = 0;
+   ServiceTypeSendAirport = 1;
+   ServiceTypePickAirport = 2;
+}
+enum VIPHallType {
+   VIPHallTypeUnSetting = 0;
+   VIPHallTypeSelf = 1;
+   VIPHallTypePartner = 2;
+   VIPHallTypeVvip = 3;
+}
+message VVIPHallDto {
+   optional int32 VIPHallID = 1 [default = 0];
+   optional string VIPHallEncryptParam = 2;
+   optional string VIPHallName = 3;
+   optional string Address = 4;
+   optional VIPHallServiceType VVipType = 5 [default = ServiceTypeVIPHall];
+   optional double SalePrice = 6 [default = 0];
+   optional string BusinessBeginHour = 7;
+   optional string BusinessEndHour = 8;
+   optional VIPHallType VipHallType = 9 [default = VIPHallTypeUnSetting];
+   optional string SecurityCheckLocation = 10;
+   optional string ViphallImgUri = 11;
+   optional string AirportTerminalName = 12;
+   repeated MoVIPHallAuxType VIPHallAuxTypeList = 13;
+   optional string ArrivalVipHallTime = 14;
+   optional string VIPHallServiceTel = 15;
+}
+message VipChannelDto {
+   optional int32 VIPChannelID = 1 [default = 0];
+   optional string VIPChannelEncryptParam = 2;
+   optional string Address = 3;
+   optional double SalePrice = 4 [default = 0];
+   optional int32 VipChannelType = 5 [default = 0];
+   optional string BusinessBeginHour = 6;
+   optional string BusinessEndHour = 7;
+   optional string AirportTerminalName = 8;
+   optional string ArrivalVipHallTime = 9;
+   optional string OwnerEmployeeMobile = 10;
+}

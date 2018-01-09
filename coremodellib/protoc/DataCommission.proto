@@ -1,0 +1,18 @@
+//指定proto版本，与服务接口一致
+syntax = "proto2";
+
+//指定java类的包名
+option java_package = "gctraveltools.jsj.com.cn.coremodellib.model.proto";
+
+//message.proto文件中的每个message都生成一个对应的.java。设为fasle时只导出一个.java类文件，所有message都以内部类的形式出现
+option java_multiple_files = true;
+
+//数据权限(员工、CRM必填)
+//http://memberapi.jsjit.cn/hosts/JUser.aspx?help&m2=JSJ.Member.Enums.EnumDef%2bAPIEnum%2bDataCommission&dll=Member.Common.dll
+enum DataCommission {
+    DataCommissionNoSetting = 0;
+    Personal = 1;
+    Department = 2;
+    DepartmentAndSub = 3;
+    All = 4;
+}

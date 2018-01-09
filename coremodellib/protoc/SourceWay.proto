@@ -1,0 +1,22 @@
+//指定proto版本，与服务接口一致
+syntax = "proto2";
+
+//指定java类的包名
+option java_package = "gctraveltools.jsj.com.cn.coremodellib.model.proto";
+
+//message.proto文件中的每个message都生成一个对应的.java。设为fasle时只导出一个.java类文件，所有message都以内部类的形式出现
+option java_multiple_files = true;
+
+//请求来源
+//http://memberapi.jsjit.cn/hosts/JUser.aspx?help&m2=JSJ.Member.Enums.EnumDef%2bAPIEnum%2bSourceWay&dll=Member.Common.dll
+enum SourceWay {
+    SourceWayNoSetting = 0;
+    Web = 10;
+    Wap = 20;
+    IOS = 30;
+    Android = 40;
+    CRM_p = 50;
+    BusinessTravel = 60;
+    WeChat = 70;
+    WeChatProgram = 80;
+}

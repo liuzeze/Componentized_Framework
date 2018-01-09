@@ -1,0 +1,18 @@
+//指定proto版本，与服务接口一致
+syntax = "proto2";
+
+//指定java类的包名
+option java_package = "gctraveltools.jsj.com.cn.coremodellib.model.proto";
+
+//message.proto文件中的每个message都生成一个对应的.java。设为fasle时只导出一个.java类文件，所有message都以内部类的形式出现
+option java_multiple_files = true;
+//会员、机票、租车使用
+//会员 http://memberapi.jsjit.cn/hosts/JUser.aspx?help
+//机票 http://172.16.9.10/FlightApi/FlightApi.aspx?help
+//租车 http://172.16.9.10/FlightApi/FlightApi.aspx?help
+message BaseResponse {
+    optional bool IsSuccess = 1 [default = false];
+    optional string ErrorMessage = 2;
+    optional string ErrorCode = 3;
+    optional string NowTime = 4;
+}

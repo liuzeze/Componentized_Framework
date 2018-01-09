@@ -1,0 +1,24 @@
+//指定使用的proto版本，与服务接口要保持一致
+syntax = "proto2";
+
+//指定java类的包名
+option java_package = "gctraveltools.jsj.com.cn.coremodellib.model.proto";
+
+//message.proto文件中的每个message都生成一个对应的.java。设为fasle时只导出一个.java类文件，所有message都以内部类的形式出现
+option java_multiple_files = true;
+
+//修改密码（找回密码）
+//http://memberapi.jsjit.cn/Hosts/User.aspx?help&m1=Member.API.API.User.GetPwdUpdate&rsdll=Member.Common.dll&rqdll=Member.Common.dll
+//获取验证码(通过手机号发送验证码的接口:注册、登录、找回密码)
+//http://memberapi.jsjit.cn/Hosts/User.aspx?help&m1=Member.API.API.User.CheckGetPwdVcode&rsdll=Member.Common.dll&rqdll=Member.Common.dll
+
+enum VcodeType {
+   VcodeTypeNoSet = 0;
+   VcodeTypeRegister = 1;
+   VcodeTypeLogin = 2;
+   VcodeTypeModifyPwd = 3;
+   VcodeTypeFindPwd = 4;
+   SetDepositPwd = 5;
+   DepositPaymentPwd = 6;
+   ActivityVerificateCode = 7;
+}

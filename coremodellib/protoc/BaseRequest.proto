@@ -1,0 +1,31 @@
+//指定proto版本，与服务接口一致
+syntax = "proto2";
+
+//指定java类的包名
+option java_package = "gctraveltools.jsj.com.cn.coremodellib.model.proto";
+
+//message.proto文件中的每个message都生成一个对应的.java。设为fasle时只导出一个.java类文件，所有message都以内部类的形式出现
+option java_multiple_files = true;
+//会员、机票使用
+//会员 http://memberapi.jsjit.cn/hosts/JUser.aspx?help
+//机票 http://172.16.9.10/FlightApi/FlightApi.aspx?help
+
+import "DataCommission.proto";
+import "LanguageVersion.proto";
+import "SourceWay.proto";
+
+message BaseRequest {
+    optional string AppVersion = 1;
+    optional SourceWay SourceWay = 2 [default = SourceWayNoSetting];
+    optional LanguageVersion LanguageVersion = 3 [default = CN];
+    optional string TerminalExt = 4;
+    optional string RegistrationId = 5;
+    optional string IMEI = 6;
+    optional int32 OpEmployeeID = 7 [default = 0];
+    optional string Token = 8;
+    optional DataCommission DataCommission = 9 [default = DataCommissionNoSetting];
+    optional int32 DeptID = 10 [default = 0];
+    optional int32 SourceCompanyID = 11 [default = 0];
+    optional string ActID = 12;
+    optional string JSJID = 13;
+}

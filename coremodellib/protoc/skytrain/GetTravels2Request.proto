@@ -1,0 +1,36 @@
+//指定proto版本，与服务接口一致
+syntax = "proto2";
+
+//指定java类的包名
+option java_package = "gctraveltools.jsj.com.cn.coremodellib.model.proto.skytrain";
+
+//message.proto文件中的每个message都生成一个对应的.java。设为fasle时只导出一个.java类文件，所有message都以内部类的形式出现
+option java_multiple_files = true;
+import "BaseRequest.proto";
+//获取行程列表
+//http://172.16.21.58/JSJ.PayRecommend/Hosts/TravelApi.aspx?help  GetTravels
+message GetTravels2Request {
+   optional BaseRequest BaseRequest = 1;
+   optional int32 JSJID = 2 [default = 0];
+   optional int32 PageIndex = 3 [default = 0];
+   optional int32 PageSize = 4 [default = 0];
+   optional bool IsshowFlightDynamic = 5 [default = false];
+   optional TravelRouteType TravelRouteType = 6 [default = TravelRouteTypeUnSetting];
+   repeated TravelType TravelTypes = 7;
+}
+enum TravelRouteType {
+   TravelRouteTypeUnSetting = 0;
+   TravelRouteTypeSys = 1;
+   TravelRouteTypeCus = 2;
+}
+enum TravelType {
+   UnSetting = 0;
+   AirportTravel = 1;
+   RailportTravel = 2;
+   VipHall = 3;
+   Boarding = 4;
+   VipChannel = 5;
+   VVipHall = 6;
+   Assistant = 7;
+   CombinedOrder = 128;
+}
