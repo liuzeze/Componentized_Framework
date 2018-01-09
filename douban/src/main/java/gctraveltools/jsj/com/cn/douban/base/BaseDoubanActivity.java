@@ -1,11 +1,12 @@
 package gctraveltools.jsj.com.cn.douban.base;
 
+import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import javax.inject.Inject;
 
-import butterknife.ButterKnife;
 import gctraveltools.jsj.com.cn.commonlib.base.BaseActivity;
 import gctraveltools.jsj.com.cn.commonlib.base.BaseApplication;
 import gctraveltools.jsj.com.cn.coremodellib.mvp.base.BasePresenter;
@@ -20,16 +21,16 @@ import gctraveltools.jsj.com.cn.douban.component.DaggerActivityComponent;
  * Created by 刘泽 on 2017/4/18 18:50.
  */
 
-public abstract class BaseDoubanActivity<T extends BasePresenter> extends BaseActivity implements BaseView {
+public abstract class BaseDoubanActivity<T extends BasePresenter,V extends ViewDataBinding> extends BaseActivity implements BaseView {
 
     @Inject
     protected T mPresenter;
+    protected V mBinding;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayout());
-        ButterKnife.bind(this);
+        mBinding = DataBindingUtil.setContentView(this, getLayout());
 
         initInject();
         onViewCreated();

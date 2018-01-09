@@ -20,55 +20,35 @@ import com.ms.square.android.expandabletextview.ExpandableTextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
 import gctraveltools.jsj.com.cn.coremodellib.model.bean.MovieDetailBean;
 import gctraveltools.jsj.com.cn.douban.adapter.DouBanMoviepeopleAdapter;
 import gctraveltools.jsj.com.cn.douban.base.BaseDoubanActivity;
+import gctraveltools.jsj.com.cn.douban.databinding.ActivityDoubanDetailBinding;
 import gctraveltools.jsj.com.cn.douban.presenter.DouBanDetailContract;
 import gctraveltools.jsj.com.cn.douban.presenter.DouBanDetailPresenter;
 
-public class DoubanDetailActivity extends BaseDoubanActivity<DouBanDetailPresenter> implements DouBanDetailContract.View {
+public class DoubanDetailActivity extends BaseDoubanActivity<DouBanDetailPresenter,ActivityDoubanDetailBinding> implements DouBanDetailContract.View {
 
 
-    @BindView(R2.id.simpledraweeview)
     SimpleDraweeView mSimpledraweeview;
-    @BindView(R2.id.movie_detail_hot_talk)
     TextView mMovieDetailHotTalk;
-    @BindView(R2.id.movie_detail_coll_layout)
     CollapsingToolbarLayout mMovieDetailCollLayout;
-    @BindView(R2.id.movie_detail_appbar)
     AppBarLayout mMovieDetailAppbar;
-    @BindView(R2.id.movie_detail_info_genres)
     TextView mMovieDetailInfoGenres;
-    @BindView(R2.id.movie_detail_info_original_title)
     TextView mMovieDetailInfoOriginalTitle;
-    @BindView(R2.id.movie_detail_info_pubdata)
     TextView mMovieDetailInfoPubdata;
-    @BindView(R2.id.movie_detail_info_durations)
     TextView mMovieDetailInfoDurations;
-    @BindView(R2.id.movie_detail_rating_tv)
     TextView mMovieDetailRatingTv;
-    @BindView(R2.id.movie_detail_rating_rating)
     RatingBar mMovieDetailRatingRating;
-    @BindView(R2.id.movie_detail_rating_count)
     TextView mMovieDetailRatingCount;
-    @BindView(R2.id.movie_detail_rating_layout)
     LinearLayout mMovieDetailRatingLayout;
-    @BindView(R2.id.movie_detail_btn_watch)
     Button mMovieDetailBtnWatch;
-    @BindView(R2.id.movie_detail_btn_watched)
     Button mMovieDetailBtnWatched;
-    @BindView(R2.id.movie_detail_ticket)
     TextView mMovieDetailTicket;
-    @BindView(R2.id.expandable_text)
     TextView mExpandableText;
-    @BindView(R2.id.expand_collapse)
     ImageButton mExpandCollapse;
-    @BindView(R2.id.movie_detail_summary)
     ExpandableTextView mMovieDetailSummary;
-    @BindView(R2.id.movie_detail_actor_list)
     RecyclerView mMovieDetailActorList;
-    @BindView(R2.id.movie_detail_scrollview)
     NestedScrollView mMovieDetailScrollview;
     private String mId;
     private String mImgurl;
@@ -83,11 +63,33 @@ public class DoubanDetailActivity extends BaseDoubanActivity<DouBanDetailPresent
 
     @Override
     protected void initInject() {
+
         getActivityComponent().inject(this);
     }
 
     @Override
     protected void initView() {
+        mSimpledraweeview=mBinding.simpledraweeview;
+       mMovieDetailHotTalk=mBinding.movieDetailHotTalk;
+        mMovieDetailCollLayout=mBinding.movieDetailCollLayout;
+       mMovieDetailAppbar=mBinding.movieDetailAppbar;
+      mMovieDetailInfoGenres=mBinding.content.movieDetailInfoGenres;
+       mMovieDetailInfoOriginalTitle=mBinding.content.movieDetailInfoOriginalTitle;
+        mMovieDetailInfoPubdata=mBinding.content.movieDetailInfoPubdata;
+       mMovieDetailInfoDurations=mBinding.content.movieDetailInfoDurations;
+        mMovieDetailRatingTv=mBinding.content.movieDetailRatingTv;
+        mMovieDetailRatingRating=mBinding.content.movieDetailRatingRating;
+       mMovieDetailRatingCount=mBinding.content.movieDetailRatingCount;
+         mMovieDetailRatingLayout=mBinding.content.movieDetailRatingLayout;
+       mMovieDetailBtnWatch=mBinding.content.movieDetailBtnWatch;
+        mMovieDetailBtnWatched=mBinding.content.movieDetailBtnWatched;
+        mMovieDetailTicket=mBinding.content.movieDetailTicket;
+        mExpandableText=mBinding.content.expandableText;
+        mExpandCollapse=mBinding.content.expandCollapse;
+        mMovieDetailSummary=mBinding.content.movieDetailSummary;
+         mMovieDetailActorList=mBinding.content.movieDetailActorList;
+         mMovieDetailScrollview=mBinding.movieDetailScrollview;
+
 
         mId = getIntent().getStringExtra("id");
         mImgurl = getIntent().getStringExtra("imgurl");

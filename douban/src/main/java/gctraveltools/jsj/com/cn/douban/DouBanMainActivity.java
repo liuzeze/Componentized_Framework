@@ -30,11 +30,12 @@ import gctraveltools.jsj.com.cn.commonlib.ARouterPath;
 import gctraveltools.jsj.com.cn.coremodellib.model.bean.MovieListBean;
 import gctraveltools.jsj.com.cn.douban.adapter.DouBanMovieListAdapter;
 import gctraveltools.jsj.com.cn.douban.base.BaseDoubanActivity;
+import gctraveltools.jsj.com.cn.douban.databinding.ActivityDouBanMainBinding;
 import gctraveltools.jsj.com.cn.douban.presenter.DouBanListContract;
 import gctraveltools.jsj.com.cn.douban.presenter.DouBanListPresenter;
 
 @Route(path = ARouterPath.DouBanAty)
-public class DouBanMainActivity extends BaseDoubanActivity<DouBanListPresenter>
+public class DouBanMainActivity extends BaseDoubanActivity<DouBanListPresenter,ActivityDouBanMainBinding>
         implements NavigationView.OnNavigationItemSelectedListener, DouBanListContract.View {
 
 

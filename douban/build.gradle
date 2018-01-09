@@ -7,7 +7,9 @@ if (rootProject.ext.isPlugin) {
 android {
     compileSdkVersion 26
 
-
+    dataBinding {
+        enabled true
+    }
 
     defaultConfig {
         if (!rootProject.ext.isPlugin) {
@@ -31,6 +33,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
     }
 
     sourceSets {
@@ -57,11 +60,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     implementation project(':commonlib')
-    implementation 'com.ms-square:expandableTextView:0.1.4'
+    api 'com.ms-square:expandableTextView:0.1.4'
 
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     //依赖注入 编译需要
     annotationProcessor rootProject.ext.dependencies.dagger2_compiler
-    //butterknife View 注入  编译需要
-    annotationProcessor rootProject.ext.dependencies.butterknife_compiler
+
 }
