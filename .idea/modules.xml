@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/NewGCTravelTools.iml" filepath="$PROJECT_DIR$/NewGCTravelTools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonlib/commonlib.iml" filepath="$PROJECT_DIR$/commonlib/commonlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coremodellib/coremodellib.iml" filepath="$PROJECT_DIR$/coremodellib/coremodellib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/douban/douban.iml" filepath="$PROJECT_DIR$/douban/douban.iml" />
+      <module fileurl="file://$PROJECT_DIR$/opensourcelib/opensourcelib.iml" filepath="$PROJECT_DIR$/opensourcelib/opensourcelib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servers1/servers1.iml" filepath="$PROJECT_DIR$/servers1/servers1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhihuribao/zhihuribao.iml" filepath="$PROJECT_DIR$/zhihuribao/zhihuribao.iml" />
+    </modules>
+  </component>
+</project>

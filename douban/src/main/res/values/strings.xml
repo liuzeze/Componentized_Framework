@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">douban</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_douban_detail">DoubanDetailActivity</string>
+    <string name="large_text">  </string>
+    <!-- 详情页面-->
+    <string name="movie_detail_title">电影</string>
+    <string name="movie_detail_hot_talk">%1$d人正在热议</string>
+    <string name="movie_detail_rating_title">豆瓣评分</string>
+    <string name="movie_detail_btn_watch">想看</string>
+    <string name="movie_detail_btn_watched">看过</string>
+    <string name="movie_detail_tv_ticket">选座购票</string>
+    <string name="movie_detail_tv_jianjie">简介</string>
+    <string name="movie_detail_tv_actor">影人</string>
+    <string name="movie_detail_tv_photo">预告片 / 剧照</string>
+    <string name="movie_detail_tv_comment">短评</string>
+
+    <string name="t_movie_list_to_detail">ivPhoto</string>
+
+</resources>

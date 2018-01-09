@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="gctraveltools.jsj.com.cn.douban">
+
+    <application>
+        <activity
+            android:name=".DouBanMainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".DoubanDetailActivity"
+            android:label="@string/title_activity_douban_detail"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".DouBanWebDetailActivity">
+        </activity>
+        <activity android:name=".DouBanFixActivity">
+        </activity>
+    </application>
+
+</manifest>

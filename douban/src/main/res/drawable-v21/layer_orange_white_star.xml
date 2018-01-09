@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background"
+        android:drawable="@mipmap/ic_white_star_42x42" />
+    <item android:id="@android:id/secondaryProgress"
+        android:drawable="@mipmap/ic_white_star_42x42" />
+    <item android:id="@android:id/progress">
+        <bitmap
+            android:src="@mipmap/ic_orange_star"
+            android:tileModeX="repeat"/>
+    </item>
+</layer-list>

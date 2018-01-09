@@ -1,0 +1,67 @@
+if (rootProject.ext.isPlugin) {
+    apply plugin: 'com.android.library'
+    apply plugin: 'com.jakewharton.butterknife'
+} else {
+    apply plugin: 'com.android.application'
+}
+android {
+    compileSdkVersion 26
+
+
+
+    defaultConfig {
+        if (!rootProject.ext.isPlugin) {
+            applicationId "gctraveltools.jsj.com.cn.douban"
+        }
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: "douban"]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            if (!rootProject.ext.isPlugin) {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                //集成开发模式下排除debug文件夹中的所有Java文件
+                java {
+                    exclude 'debug*'
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    implementation project(':commonlib')
+    implementation 'com.ms-square:expandableTextView:0.1.4'
+
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+    //依赖注入 编译需要
+    annotationProcessor rootProject.ext.dependencies.dagger2_compiler
+    //butterknife View 注入  编译需要
+    annotationProcessor rootProject.ext.dependencies.butterknife_compiler
+}

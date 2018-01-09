@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!--星级StarBar-->
+    <style name="ratingBar_comment" parent="android:Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/layer_orange_white_star</item>
+        <item name="android:indeterminateDrawable">@drawable/layer_orange_white_star</item>
+        <item name="android:minHeight">5dp</item>
+        <item name="android:maxHeight">25dp</item>
+        <item name="android:isIndicator">false</item>
+        <item name="android:thumb">@null</item>
+    </style>
+
+    <style name="movieDetailTextInfo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_marginTop">3dp</item>
+    </style>
+
+    <style name="movieDetailWatchBtn">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/selector_movie_detail_watch_btn_bg</item>
+        <item name="android:textColor">#ff5a00</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="movieDetailTipText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#666666</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+</resources>

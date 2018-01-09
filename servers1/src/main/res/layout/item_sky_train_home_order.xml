@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="27dp"
+        android:src="@mipmap/ic_sky_tain_order"/>
+
+    <TextView
+        android:id="@+id/tv_airport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_toRightOf="@+id/icon"
+        android:paddingRight="25dp"
+        android:textColor="#333333"
+        android:textSize="18dp"
+        tools:text="北京首都T3—上海虹桥T2"
+        />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_airport"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="7dp"
+        android:layout_toRightOf="@+id/icon"
+        android:textColor="#666666"
+        android:textSize="14dp"
+        tools:text="MU3132 2017-11-02"
+        />
+
+    <TextView
+        android:id="@+id/tv_no_server"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_airport"
+        android:layout_marginTop="5dp"
+        android:background="#f5a623"
+        android:gravity="right"
+        android:paddingBottom="2dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:paddingTop="2dp"
+        android:text="暂无服务"
+        android:textColor="#ffffff"
+        android:textSize="12dp"/>
+
+
+</RelativeLayout>

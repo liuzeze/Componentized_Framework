@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "gctraveltools.jsj.com.cn.newgctraveltools"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : "app" ]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // 打包配置,排除一些文件
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation project(':commonlib')
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+
+    //依赖注入 编译需要
+    annotationProcessor rootProject.ext.dependencies.dagger2_compiler
+    //butterknife View 注入  编译需要
+    annotationProcessor rootProject.ext.dependencies.butterknife_compiler
+    if (rootProject.ext.isPlugin) {
+        implementation project(':servers1')
+        implementation project(':zhihuribao')
+        implementation project(':douban')
+    } else {
+
+    }
+}

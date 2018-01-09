@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="gctraveltools.jsj.com.cn.douban.DoubanDetailActivity"
+    tools:showIn="@layout/activity_douban_detail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- 电影信息 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/movie_detail_info_genres"
+                    style="@style/movieDetailTextInfo"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/movie_detail_info_original_title"
+                    style="@style/movieDetailTextInfo"/>
+
+                <TextView
+                    android:id="@+id/movie_detail_info_pubdata"
+                    style="@style/movieDetailTextInfo"/>
+
+                <TextView
+                    android:id="@+id/movie_detail_info_durations"
+                    style="@style/movieDetailTextInfo"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/movie_detail_rating_layout"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_movie_detail_hot_talk_bg"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/movie_detail_rating_title"
+                    android:textColor="#999999"
+                    android:textSize="10sp"/>
+
+                <TextView
+                    android:id="@+id/movie_detail_rating_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#111111"
+                    android:textSize="19sp"
+                    android:textStyle="bold"/>
+
+                <RatingBar
+                    android:id="@+id/movie_detail_rating_rating"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressTint="#ffb300"
+                    android:stepSize="0.5"/>
+
+                <TextView
+                    android:id="@+id/movie_detail_rating_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="#999999"
+                    android:textSize="12sp"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- 想看和看过 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <Button
+                android:id="@+id/movie_detail_btn_watch"
+                style="@style/movieDetailWatchBtn"
+                android:layout_marginRight="5dp"
+                android:text="@string/movie_detail_btn_watch"/>
+
+            <Button
+                android:id="@+id/movie_detail_btn_watched"
+                style="@style/movieDetailWatchBtn"
+                android:layout_marginLeft="5dp"
+                android:text="@string/movie_detail_btn_watched"/>
+        </LinearLayout>
+        <!-- 购票 -->
+        <TextView
+            android:id="@+id/movie_detail_ticket"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="?attr/selectableItemBackground"
+            android:drawableLeft="@drawable/fire"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="@string/movie_detail_tv_ticket"
+            android:textColor="#ff0000"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            style="@style/movieDetailTipText"
+            android:text="@string/movie_detail_tv_jianjie"/>
+        <!-- 简介 -->
+        <com.ms.square.android.expandabletextview.ExpandableTextView
+            android:id="@+id/movie_detail_summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            app:animDuration="200"
+            app:maxCollapsedLines="4">
+
+            <TextView
+                android:id="@id/expandable_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#666666"
+                android:textSize="15sp"/>
+
+            <ImageButton
+                android:id="@id/expand_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:background="@android:color/transparent"
+                android:padding="10dp"/>
+
+        </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+        <TextView
+            style="@style/movieDetailTipText"
+            android:text="@string/movie_detail_tv_actor"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/movie_detail_actor_list"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

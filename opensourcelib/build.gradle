@@ -1,0 +1,110 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //网络框架处理工具包
+    api rootProject.ext.dependencies.retrofit
+    api rootProject.ext.dependencies.retrofit_converter_protobuf
+    api rootProject.ext.dependencies.retrofit_adapter_rxjava
+    //异步处理工具包
+    api rootProject.ext.dependencies.rxjava
+    api rootProject.ext.dependencies.rxjava_android
+    //butterknife View 注入
+    api rootProject.ext.dependencies.butterknife
+    annotationProcessor rootProject.ext.dependencies.butterknife_compiler
+    //依赖注入
+    api rootProject.ext.dependencies.dagger2
+    annotationProcessor rootProject.ext.dependencies.dagger2_compiler
+    //butterknife View 注入
+    api rootProject.ext.dependencies.butterknife
+    annotationProcessor rootProject.ext.dependencies.butterknife_compiler
+    //protobuf处理工具包
+    api rootProject.ext.dependencies.protobuf_java
+    api rootProject.ext.dependencies.protobuf_javanano
+    //logger
+    api rootProject.ext.dependencies.logger
+    //图片加载处理工具包
+    api rootProject.ext.dependencies.fresco
+    api rootProject.ext.dependencies.fresco_animated_gif
+    //强大灵活的RecyclerAdapter https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    api rootProject.ext.dependencies.BaseRecyclerViewAdapterHelper
+    //支持包
+    api rootProject.ext.dependencies.support_v4
+    api rootProject.ext.dependencies.appcompatV7
+    api rootProject.ext.dependencies.recycleview
+    api rootProject.ext.dependencies.cardview
+    api rootProject.ext.dependencies.annotations
+    api rootProject.ext.dependencies.gridlayout
+    api rootProject.ext.dependencies.design
+    api rootProject.ext.dependencies.constraint_layout
+    compile 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    compile 'com.alibaba:arouter-api:1.2.4'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:converter-scalars:2.3.0'
+
+    //For Lifecycles, LiveData, and ViewModel
+    compile "android.arch.lifecycle:runtime:1.0.3"
+    compile "android.arch.lifecycle:extensions:1.0.0"
+    annotationProcessor "android.arch.lifecycle:compiler:1.0.0"
+
+    //For Room
+    compile "android.arch.persistence.room:runtime:1.0.0"
+    annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
+
+    api files('libs/tbs_sdk_thirdapp_v3.5.0.1004_43500_sharewithdownload_withoutGame_obfs_20170801_113025.jar')
+
+    /* //二维码处理工具包
+         api rootProject.ext.dependencies.zxing
+         //recycleview加载动画处理工具包
+         api rootProject.ext.dependencies.recyclerview_animators
+
+
+         //友盟统计
+         api rootProject.ext.dependencies.umeng
+
+         //https://github.com/lcodecorex/TwinklingRefreshLayout
+         api rootProject.ext.dependencies.tkrefreshlayout
+
+         //jsoup
+         api rootProject.ext.dependencies.jsoup
+         //动画支持库
+         api rootProject.ext.dependencies.nineoldandroids
+         //鲁班压缩图片
+         api rootProject.ext.dependencies.luban
+         //极光推送引入
+       //  api rootProject.ext.dependencies.jpush
+        // api rootProject.ext.dependencies.jcore
+         //bugly
+         api rootProject.ext.dependencies.bugly_sdk
+         api rootProject.ext.dependencies.bugly_ndk
+         //谷歌官方提供的流布局
+         //https://github.com/google/flexbox-layout
+         api rootProject.ext.dependencies.flexbox*/
+}

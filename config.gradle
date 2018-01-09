@@ -1,0 +1,137 @@
+ext {
+    isPlugin = isModule.toBoolean();//true:作为Lib组件存在， false:作为application存在
+
+    android = [
+
+            compileSdkVersion: 25,
+            buildToolsVersion: "25.0.2",
+            minSdkVersion    : 15,
+            targetSdkVersion : 22,
+            versionCode      : 218,
+            versionName      : '4.8.7.1',
+    ]
+
+
+
+    libsVersion = [
+            // App dependencies version
+            supportLibraryVersion = "26.1.0",
+
+            //gson google 出品，处理Json与对象的转换
+            gsonVersion = '2.7',
+
+            //protobuf 解析工具
+            protobufVersion = '3.2.0',
+
+            //google 出品，二维码生成以及识别
+            zxingVersion = '3.2.1',
+
+            //facebook 出品，强大的图片加载处理包
+            frescoVersion = '1.0.0',
+
+            //Square提供的开源产品，为Android平台的应用提供一个类型安全的REST客户端
+            retrofitVersion = '2.3.0',
+
+            //响应式编程框架RxJava针对Android平台的扩展。
+            rxjavaVersion = '2.1.3',
+            rxandroidVersion = '2.0.1',
+
+            //依赖注入(或叫ioc,用过Spring的都知道这东东)框架，用于解耦的。
+            dagger2Version = '2.5',
+
+            //View 注入框架
+            butterknifeVersion = '8.2.1',
+
+            //检测所有的内存泄漏
+            leakcanaryVersion = '1.3.1'
+
+    ]
+
+
+    dependencies = [
+
+            //支持包
+            appcompatV7                  : "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion",
+            support_v4                   : "com.android.support:support-v4:$rootProject.supportLibraryVersion",
+            recycleview                  : "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion",
+            cardview                     : "com.android.support:cardview-v7:$rootProject.supportLibraryVersion",
+            annotations                  : "com.android.support:support-annotations:$rootProject.supportLibraryVersion",
+            design                       : "com.android.support:design:$rootProject.supportLibraryVersion",
+            gridlayout                   : "com.android.support:gridlayout-v7:$rootProject.supportLibraryVersion",
+            constraint_layout            : "com.android.support.constraint:constraint-layout:1.0.2",
+
+            //butterknifr  注解以及编译库
+            butterknife                  : "com.jakewharton:butterknife:$rootProject.butterknifeVersion",
+            butterknife_compiler         : "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion",
+
+            //dagger库以及编译库
+            dagger2                      : "com.google.dagger:dagger:$rootProject.dagger2Version",
+            dagger2_compiler             : "com.google.dagger:dagger-compiler:$rootProject.dagger2Version",
+
+            //retrofit 网络库
+            retrofit                     : "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion",
+            retrofit_converter_protobuf  : "com.squareup.retrofit2:converter-protobuf:$rootProject.ext.retrofitVersion",
+            retrofit_adapter_rxjava      : "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVersion",
+            //异步处理
+            rxjava                       : "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion",
+            rxjava_android               : "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion",
+            //protobuf
+            protobuf_java                : "com.google.protobuf:protobuf-java:$rootProject.protobufVersion",
+            protobuf_javanano            : "com.google.protobuf.nano:protobuf-javanano:3.2.0rc2",
+
+            //fresco 图片 以及gif 加载
+            fresco                       : "com.facebook.fresco:fresco:$rootProject.ext.frescoVersion",
+            fresco_animated_gif          : "com.facebook.fresco:animated-gif:$rootProject.ext.frescoVersion",
+
+            //zxing 二维码
+            zxing                        : "com.google.zxing:core:$rootProject.ext.zxingVersion",
+
+            //orm数据库
+            greenDao                     : "org.greenrobot:greendao:3.2.0",
+
+            //buggly错误统计
+            bugly_sdk                    : "com.tencent.bugly:crashreport:2.6.5",
+            bugly_ndk                    : "com.tencent.bugly:nativecrashreport:3.3.1",
+
+            //鲁班图压缩
+            luban                        : "top.zibin:Luban:1.0.9",
+
+            //谷歌统计
+            google                       : "com.google.android.gms:play-services-analytics:11.4.2",
+            //友盟统计
+            umeng                        : "com.umeng.analytics:analytics:6.1.0",
+
+            //极光推送
+            jpush                        : "cn.jiguang.sdk:jpush:3.0.1",
+            jcore                        : "cn.jiguang.sdk:jcore:1.1.0",
+
+            //recycleview的编译库
+            recyclerview_animators       : "jp.wasabeef:recyclerview-animators:2.2.3",
+
+            //log 日志三方库
+            logger                       : "com.orhanobut:logger:1.15",
+
+            //下拉刷新上拉加载更多
+            tkrefreshlayout              : "com.lcodecorex:tkrefreshlayout:1.0.5",
+
+            //recycleview的adapter封装库
+            BaseRecyclerViewAdapterHelper: "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.33",
+            //jsoup 处理html等相关
+            jsoup                        : "org.jsoup:jsoup:1.10.2",
+
+            //动画支持库
+            nineoldandroids              : "com.nineoldandroids:library:2.4.0",
+
+            //分包
+            multidex                     : "com.android.support:multidex:1.0.2",
+
+            //谷歌刘布局
+            flexbox                      : "com.google.android:flexbox:0.2.5",
+
+            //三方权限封装库
+            permission                   : "com.yanzhenjie:permission:1.0.5",
+
+            //  implementation 'javax.annotation:javax.annotation-api:1.2'
+
+    ]
+}
