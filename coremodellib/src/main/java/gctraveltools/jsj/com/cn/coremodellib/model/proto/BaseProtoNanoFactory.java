@@ -19,7 +19,7 @@ public class BaseProtoNanoFactory {
         //构建请求基类
         BaseRequest baseBuilder = new BaseRequest();
 
-        baseBuilder.appVersion = "100";
+        baseBuilder.appVersion = "";
 
         baseBuilder.sourceCompanyID = 1;
 
@@ -42,7 +42,7 @@ public class BaseProtoNanoFactory {
         baseBuilder.iMEI = "This_device_does_not_support";
 
 
-        baseBuilder.jSJID = "123456";
+        baseBuilder.jSJID = "123456789";
 
 
         return baseBuilder;

@@ -3,7 +3,6 @@ package gctraveltools.jsj.com.cn.zhihuribao;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.text.Html;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -21,7 +20,6 @@ import gctraveltools.jsj.com.cn.zhihuribao.bean.NewsCommentBean;
 import gctraveltools.jsj.com.cn.zhihuribao.bean.NewsDetailBean;
 import gctraveltools.jsj.com.cn.zhihuribao.presenter.ZhiHuDetailContract;
 import gctraveltools.jsj.com.cn.zhihuribao.presenter.ZhiHuDetailPresenter;
-import gctraveltools.jsj.com.cn.zhihuribao.view.SimpleItemTouchHelperCallback;
 
 /**
  * -------- 日期 ---------- 维护人 ------------ 变更内容 --------
@@ -90,12 +88,6 @@ public class ZHNewsDetailActivity extends BaseZHActivity<ZhiHuDetailPresenter> i
         DividerItemDecoration itemDecoration = new DividerItemDecoration(this,
                 DividerItemDecoration.VERTICAL);
         mRecyclerview.addItemDecoration(itemDecoration);
-        //先实例化Callback
-        ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(mAdapter);
-        //用Callback构造ItemtouchHelper
-        ItemTouchHelper touchHelper = new ItemTouchHelper(callback);
-        //调用ItemTouchHelper的attachToRecyclerView方法建立联系
-        touchHelper.attachToRecyclerView(mRecyclerview);
 
         mRecyclerview.setAdapter(mAdapter);
         mAdapter.openLoadAnimation(new ScaleInAnimation());

@@ -6,8 +6,9 @@ if (rootProject.ext.isPlugin) {
 
 android {
     compileSdkVersion 26
-
-
+    dataBinding {
+        enabled true
+    }
 
     defaultConfig {
         if (!rootProject.ext.isPlugin) {

@@ -3,17 +3,15 @@ package gctraveltools.jsj.com.cn.zhihuribao;
 import android.arch.lifecycle.Observer;
 import android.content.Intent;
 import android.support.annotation.Nullable;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.animation.ScaleInAnimation;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -25,7 +23,9 @@ import gctraveltools.jsj.com.cn.zhihuribao.adapter.ZHListAdapter;
 import gctraveltools.jsj.com.cn.zhihuribao.bean.NewsBean;
 import gctraveltools.jsj.com.cn.zhihuribao.presenter.ZhiHuContract;
 import gctraveltools.jsj.com.cn.zhihuribao.presenter.ZhiHuPresenter;
+import gctraveltools.jsj.com.cn.zhihuribao.recyclerview.BaseBindingRecycleViewAdapter;
 import gctraveltools.jsj.com.cn.zhihuribao.view.RecyclerViewDecoration;
+import gctraveltools.jsj.com.cn.zhihuribao.view.SimpleItemTouchHelperCallback;
 
 @Route(path = ARouterPath.ZhiHUAty)
 public class ZHMainActivity extends BaseZHActivity<ZhiHuPresenter> implements ZhiHuContract.View {
@@ -35,7 +35,6 @@ public class ZHMainActivity extends BaseZHActivity<ZhiHuPresenter> implements Zh
     private TextView mTextView;
     private List<NewsBean.StoriesEntity> mStories = new ArrayList<>();
     private ZHListAdapter mAdapter;
-    private SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
     protected int getLayout() {
@@ -50,7 +49,6 @@ public class ZHMainActivity extends BaseZHActivity<ZhiHuPresenter> implements Zh
     @Override
     protected void initView() {
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
-        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swiperefreshlayout);
         mTextView = (TextView) findViewById(R.id.textview);
         mRecyclerview = (RecyclerView) findViewById(R.id.recyclerview);
         mRecyclerview.setHasFixedSize(true);
@@ -59,30 +57,40 @@ public class ZHMainActivity extends BaseZHActivity<ZhiHuPresenter> implements Zh
         RecyclerViewDecoration itemDecoration = new RecyclerViewDecoration(this,
                 DividerItemDecoration.VERTICAL);
         mRecyclerview.addItemDecoration(itemDecoration);
+        //先实例化Callback
+        ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(mAdapter);
+        //用Callback构造ItemtouchHelper
+        ItemTouchHelper touchHelper = new ItemTouchHelper(callback);
+        //调用ItemTouchHelper的attachToRecyclerView方法建立联系
+        touchHelper.attachToRecyclerView(mRecyclerview);
 
         mRecyclerview.setAdapter(mAdapter);
-        mAdapter.openLoadAnimation(new ScaleInAnimation());
-        mAdapter.isFirstOnly(false);//init firstOnly state
+       // mAdapter.openLoadAnimation(new ScaleInAnimation());
+       // mAdapter.isFirstOnly(false);//init firstOnly state
         mPresenter.getZhiHuNews();
 
-
-        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new BaseBindingRecycleViewAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+            public void onItemClick(View view, int position) {
                 Intent intent = new Intent(mContext, ZHNewsDetailActivity.class);
                 intent.putExtra("ZHIHUNEWSDETAIL", mStories.get(position).getId() + "");
                 startActivity(intent);
             }
         });
-
-        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        /*mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
-            public void onRefresh() {
-                mPresenter.getZhiHuNews();
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
 
             }
-        });
+        });*/
 
+        mTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(mContext, LayoutImgActivity.class));
+            }
+        });
 
         //观察数据变化来刷新UI
         mPresenter.getLiveObservableData().observe(this, new Observer<String>() {
@@ -95,10 +103,7 @@ public class ZHMainActivity extends BaseZHActivity<ZhiHuPresenter> implements Zh
                 mStories.clear();
                 mStories.addAll(newsBean.getStories());
                 mAdapter.setNewData(mStories);
-                if (mSwipeRefreshLayout.isRefreshing()) {
-                    mSwipeRefreshLayout.setRefreshing(false
-                    );
-                }
+
             }
         });
     }
@@ -124,9 +129,6 @@ public class ZHMainActivity extends BaseZHActivity<ZhiHuPresenter> implements Zh
         mStories.clear();
         mStories.addAll(newsBean.getStories());
         mAdapter.setNewData(mStories);
-        if (mSwipeRefreshLayout.isRefreshing()) {
-            mSwipeRefreshLayout.setRefreshing(false
-            );
-        }
+
     }
 }

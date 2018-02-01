@@ -18,6 +18,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ZHNewsDetailActivity"/>
+        <activity
+            android:theme="@style/JSJ_theme.notAnimation"
+            android:name=".LayoutImgActivity"/>
     </application>
 
 </manifest>

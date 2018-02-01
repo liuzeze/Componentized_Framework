@@ -5,7 +5,7 @@
     <application>
         <activity android:name=".ZHMainActivity"/>
         <activity android:name=".ZHNewsDetailActivity"/>
-
+        <activity android:name=".LayoutImgActivity"/>
     </application>
 
 </manifest>
