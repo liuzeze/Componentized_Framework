@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import gctraveltools.jsj.com.cn.coremodellib.http.api.ApiService;
+import gctraveltools.jsj.com.cn.coremodellib.http.client.HttpClient;
 import gctraveltools.jsj.com.cn.coremodellib.http.client.RetrofitClient;
 import gctraveltools.jsj.com.cn.coremodellib.model.proto.nano.ZRequest;
 import gctraveltools.jsj.com.cn.coremodellib.model.proto.nano.ZResponse;
@@ -116,19 +117,15 @@ public class RxHttp {
 
         Retrofit.Builder singleRetrofitBuilder = RetrofitClient.getInstance().getRetrofit();
 
-
         singleRetrofitBuilder.baseUrl(baseUrl);
-
 
         for (Converter.Factory converterFactory : converterFactories) {
             singleRetrofitBuilder.addConverterFactory(converterFactory);
         }
 
-
         for (CallAdapter.Factory adapterFactory : adapterFactories) {
             singleRetrofitBuilder.addCallAdapterFactory(adapterFactory);
         }
-
 
         singleRetrofitBuilder.client(okClient == null ? getSingleOkHttpBuilder().build() : okClient);
 
@@ -142,11 +139,9 @@ public class RxHttp {
      */
     private OkHttpClient.Builder getSingleOkHttpBuilder() {
 
-        OkHttpClient.Builder singleOkHttpBuilder = new OkHttpClient.Builder();
-
+        OkHttpClient.Builder singleOkHttpBuilder = HttpClient.getInstance().getBuilder();
+        ;
         singleOkHttpBuilder.retryOnConnectionFailure(true);//断网重连
-
-
         if (isShowLog) {
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
                 @Override
@@ -157,22 +152,19 @@ public class RxHttp {
             loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
             singleOkHttpBuilder.addInterceptor(loggingInterceptor);
         }
-
-
         singleOkHttpBuilder.readTimeout(readTimeout > 0 ? readTimeout : 15, TimeUnit.SECONDS);
 
         singleOkHttpBuilder.writeTimeout(writeTimeout > 0 ? writeTimeout : 15, TimeUnit.SECONDS);
 
         singleOkHttpBuilder.connectTimeout(connectTimeout > 0 ? connectTimeout : 15, TimeUnit.SECONDS);
-
         return singleOkHttpBuilder;
     }
 
-    public Flowable<ZResponse> fetchNetworkData(ParcelableMessageNano requestData) {
+    public Flowable<ZResponse> fetchNetworkData(ParcelableMessageNano requestData, String methodName) {
         ZRequest request = new ZRequest();
 
         //设置请求方法
-        request.methodName = "GetTravels";
+        request.methodName = methodName;
 
         //将数据压缩到ZReq中
         request.zPack = MessageNano.toByteArray(requestData);

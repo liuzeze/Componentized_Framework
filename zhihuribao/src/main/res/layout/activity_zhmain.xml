@@ -8,16 +8,6 @@
     tools:ignore="ResourceName">
 
 
-
-        <android.support.v7.widget.RecyclerView
-            android:paddingTop="30dp"
-            android:id="@+id/recyclerview"
-            android:clipToPadding="false"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:nestedScrollingEnabled="false">
-        </android.support.v7.widget.RecyclerView>
-
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="50dp"
@@ -29,7 +19,40 @@
     <TextView
         android:id="@+id/textview"
         android:layout_width="match_parent"
+        android:layout_height="50px"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="下滑关闭空间"/>
+
+    <TextView
+        android:id="@+id/textview2"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_below="@+id/textview"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="股票联动列表"/>
+
+    <TextView
+        android:id="@+id/textview3"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_below="@+id/textview2"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="自定义列表头部悬浮"/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="知乎日报"/>
+        android:layout_below="@+id/textview3"
+        android:clipToPadding="false"
+        android:nestedScrollingEnabled="false"
+        android:paddingTop="30dp">
+    </android.support.v7.widget.RecyclerView>
+
 </RelativeLayout>

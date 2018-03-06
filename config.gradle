@@ -61,8 +61,8 @@ ext {
             constraint_layout            : "com.android.support.constraint:constraint-layout:1.0.2",
 
             //butterknifr  注解以及编译库
-            butterknife                  : "com.jakewharton:butterknife:$rootProject.butterknifeVersion",
-            butterknife_compiler         : "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion",
+            butterknife                  : "com.jakewharton:butterknife:8.8.1",
+            butterknife_compiler         : "com.jakewharton:butterknife-compiler:8.8.1",
 
             //dagger库以及编译库
             dagger2                      : "com.google.dagger:dagger:$rootProject.dagger2Version",

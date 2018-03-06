@@ -5,7 +5,13 @@
     <application>
         <activity android:name=".ZHMainActivity"/>
         <activity android:name=".ZHNewsDetailActivity"/>
-        <activity android:name=".LayoutImgActivity"/>
+        <activity
+            android:name=".LayoutImgActivity"
+            android:theme="@style/JSJ_theme.notAnimation"/>
+        <activity android:name=".ScrollActivity">
+        </activity>
+        <activity android:name=".suspendhead.SuspendActivity">
+        </activity>
     </application>
 
 </manifest>

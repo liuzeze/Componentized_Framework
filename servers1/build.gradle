@@ -1,5 +1,6 @@
 if (rootProject.ext.isPlugin) {
     apply plugin: 'com.android.library'
+//apply plugin: 'com.jakewharton.butterknife'
 } else {
     apply plugin: 'com.android.application'
 }
@@ -42,9 +43,9 @@ android {
             } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
                 //集成开发模式下排除debug文件夹中的所有Java文件
-                 java {
-                     exclude 'debug*'
-                 }
+                java {
+                    exclude 'debug*'
+                }
             }
         }
     }
@@ -62,4 +63,7 @@ dependencies {
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     //依赖注入 编译需要
     annotationProcessor rootProject.ext.dependencies.dagger2_compiler
+//    annotationProcessor rootProject.ext.dependencies.butterknife_compiler
 }
+
+

@@ -1,7 +1,7 @@
 package gctraveltools.jsj.com.cn.zhihuribao;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import gctraveltools.jsj.com.cn.zhihuribao.view.TouchViewGroup;

@@ -1,7 +1,5 @@
 apply plugin: 'com.android.application'
 
-
-
 android {
     dataBinding {
         enabled true
@@ -46,7 +44,7 @@ dependencies {
 
     //依赖注入 编译需要
     annotationProcessor rootProject.ext.dependencies.dagger2_compiler
-
+    annotationProcessor rootProject.ext.dependencies.butterknife_compiler
     if (rootProject.ext.isPlugin) {
         implementation project(':servers1')
         implementation project(':zhihuribao')
@@ -55,3 +53,4 @@ dependencies {
 
     }
 }
+

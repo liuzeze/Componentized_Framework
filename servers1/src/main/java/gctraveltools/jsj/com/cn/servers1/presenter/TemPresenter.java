@@ -29,43 +29,6 @@ public class TemPresenter extends RxPresenter<TempContract.View> implements Temp
         mContext = context;
         mSkyTrainApi = api;
 
-
-     /*   ArrayList<Integer> integers = new ArrayList();
-        integers.add(1);
-        integers.add(6);
-        integers.add(5);
-        integers.add(9);
-        integers.add(7);
-        integers.add(4);
-        integers.add(1);
-        integers.add(3);
-        integers.add(0);
-
-
-        //冒泡排序
-        int temp;
-        for (int i = 0; i < integers.size(); i++) {
-            for (int size = integers.size(); size > 0; size--) {
-                if (integers.get(size) > integers.get(size - 1)) {
-                    temp = integers.get(size);
-                    integers.set(size - 1, integers.get(size));
-                    integers.set(size, temp);
-                }
-            }
-        }
-
-        //选择排序
-        for (int i = 0; i < integers.size(); i++) {
-            for (int j = i + 1; j < integers.size(); j++) {
-                if (integers.get(i) < integers.get(j)) {
-                    int temp1 = integers.get(i);
-                    integers.set(i, integers.get(j));
-                    integers.set(j, temp1);
-                }
-            }
-        }
-        //插入排序*/
-
     }
 
     @Override

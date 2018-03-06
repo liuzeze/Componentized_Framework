@@ -5,9 +5,11 @@ import java.io.IOException;
 import gctraveltools.jsj.com.cn.coremodellib.http.RxHttp;
 import gctraveltools.jsj.com.cn.coremodellib.http.observer.CommonSubscriber;
 import gctraveltools.jsj.com.cn.coremodellib.http.observer.Transformer;
+import gctraveltools.jsj.com.cn.coremodellib.model.proto.BaseProtoNanoFactory;
 import gctraveltools.jsj.com.cn.coremodellib.model.proto.nano.ZResponse;
 import gctraveltools.jsj.com.cn.coremodellib.model.proto.skytrain.nano.GetTravels2Request;
 import gctraveltools.jsj.com.cn.coremodellib.model.proto.skytrain.nano.GetTravels2Response;
+import gctraveltools.jsj.com.cn.coremodellib.model.proto.skytrain.nano.TravelType;
 import io.reactivex.functions.Function;
 
 
@@ -36,15 +38,20 @@ public class SkyTrainApi {
 
     public CommonSubscriber<GetTravels2Response> getTravelList(CommonSubscriber<GetTravels2Response> subscriber) {
         //创建请求实体对象
-        GetTravels2Request requestData = new GetTravels2Request();
+        GetTravels2Request request = new GetTravels2Request();
+        //设置基础的Request
+        request.baseRequest = BaseProtoNanoFactory.getBaseReq();
+        request.isshowFlightDynamic = true;
+        request.jSJID = 1;
+        request.travelTypes = new int[]{TravelType.AirportTravel, TravelType.RailportTravel};
 
         //由于接口返回的数据都是使用ZRes进行压缩的，所以我们需要处理一下变成我们需要的数据
         return RxHttp.getInstance()
-                .baseUrl("请求地址出错")
+                .baseUrl("")
                 .connectTimeout(60)
                 .readTimeout(60)
                 .writeTimeout(60)
-                .fetchNetworkData(requestData)
+                .fetchNetworkData(request, "GetTravels")
                 .compose(Transformer.<ZResponse>switchSchedulers())
                 .map(new Function<ZResponse, GetTravels2Response>() {
                     @Override

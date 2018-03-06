@@ -56,7 +56,7 @@ public abstract class CommonSubscriber<T> extends ResourceSubscriber<T> {
     @Override
     public void onError(Throwable e) {
         e.printStackTrace();
-        String message = ApiException.handleException(e).getMessage();
+        String message = ApiException.handleException(e).getLocalizedMessage();
         if (mView == null) {
             return;
         }

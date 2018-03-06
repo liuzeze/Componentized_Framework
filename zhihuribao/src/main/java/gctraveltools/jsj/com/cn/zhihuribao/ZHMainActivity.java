@@ -24,6 +24,7 @@ import gctraveltools.jsj.com.cn.zhihuribao.bean.NewsBean;
 import gctraveltools.jsj.com.cn.zhihuribao.presenter.ZhiHuContract;
 import gctraveltools.jsj.com.cn.zhihuribao.presenter.ZhiHuPresenter;
 import gctraveltools.jsj.com.cn.zhihuribao.recyclerview.BaseBindingRecycleViewAdapter;
+import gctraveltools.jsj.com.cn.zhihuribao.suspendhead.SuspendActivity;
 import gctraveltools.jsj.com.cn.zhihuribao.view.RecyclerViewDecoration;
 import gctraveltools.jsj.com.cn.zhihuribao.view.SimpleItemTouchHelperCallback;
 
@@ -65,8 +66,8 @@ public class ZHMainActivity extends BaseZHActivity<ZhiHuPresenter> implements Zh
         touchHelper.attachToRecyclerView(mRecyclerview);
 
         mRecyclerview.setAdapter(mAdapter);
-       // mAdapter.openLoadAnimation(new ScaleInAnimation());
-       // mAdapter.isFirstOnly(false);//init firstOnly state
+        // mAdapter.openLoadAnimation(new ScaleInAnimation());
+        // mAdapter.isFirstOnly(false);//init firstOnly state
         mPresenter.getZhiHuNews();
 
         mAdapter.setOnItemClickListener(new BaseBindingRecycleViewAdapter.OnItemClickListener() {
@@ -91,7 +92,18 @@ public class ZHMainActivity extends BaseZHActivity<ZhiHuPresenter> implements Zh
                 startActivity(new Intent(mContext, LayoutImgActivity.class));
             }
         });
-
+        findViewById(R.id.textview2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(mContext, ScrollActivity.class));
+            }
+        });
+        findViewById(R.id.textview3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(mContext, SuspendActivity.class));
+            }
+        });
         //观察数据变化来刷新UI
         mPresenter.getLiveObservableData().observe(this, new Observer<String>() {
             @Override
@@ -112,6 +124,7 @@ public class ZHMainActivity extends BaseZHActivity<ZhiHuPresenter> implements Zh
     public void showErrorMsg(String msg) {
         mProgressBar.setVisibility(View.GONE);
         mTextView.setText(msg);
+
 
     }
 
