@@ -51,6 +51,12 @@ public class PictureView extends View {
 
     //柱状图数量
     private ArrayList<PrictureBean> items = new ArrayList<>();
+    private float height = 0;
+
+    public void setHeight(float height) {
+        this.height = height;
+        invalidate();
+    }
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -69,6 +75,8 @@ public class PictureView extends View {
             float right = left + width;
             float bottom = mHeightSize;
 
+            top = mHeightSize - height * (mHeightSize - top);
+
             mTextPaint.setColor(Color.BLACK);
             if (prictureBean.isLowProce) {
                 mTextPaint.setColor(Color.RED);
@@ -84,6 +92,10 @@ public class PictureView extends View {
                 mPicturePaint.setColor(Color.GREEN);
             }
             canvas.drawRect(left + 5, top, right, bottom - timeTextHeight * 3, mPicturePaint);
+
+            mPicturePaint.setColor(Color.BLACK);
+            mPicturePaint.setStrokeWidth(5);
+            canvas.drawLine(i == 0 ? left + 5 : left, bottom - timeTextHeight * 3, right, bottom - timeTextHeight * 3, mPicturePaint);
 
 
             mTextPaint.setColor(Color.BLACK);

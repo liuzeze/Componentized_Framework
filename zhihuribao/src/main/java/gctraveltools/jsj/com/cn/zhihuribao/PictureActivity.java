@@ -1,5 +1,6 @@
 package gctraveltools.jsj.com.cn.zhihuribao;
 
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
@@ -50,5 +51,6 @@ public class PictureActivity extends AppCompatActivity {
             }
         });
         pictureView.setItems(items, 2);
+        ObjectAnimator.ofFloat(pictureView,"height",0,1).setDuration(1000).start();
     }
 }
