@@ -12,6 +12,8 @@
         </activity>
         <activity android:name=".suspendhead.SuspendActivity">
         </activity>
+        <activity android:name=".PictureActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -43,13 +43,21 @@
         android:background="@color/colorAccent"
         android:gravity="center"
         android:text="自定义列表头部悬浮"/>
-
-
+    <TextView
+        android:id="@+id/textview4"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_below="@+id/textview3"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="柱状图"/>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textview3"
+        android:layout_below="@+id/textview4"
         android:clipToPadding="false"
         android:nestedScrollingEnabled="false"
         android:paddingTop="30dp">
