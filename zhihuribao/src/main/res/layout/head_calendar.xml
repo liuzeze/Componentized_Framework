@@ -2,13 +2,13 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="110dp"
     android:orientation="horizontal">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/RecyclerView"
         android:layout_width="0px"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1">
 
     </android.support.v7.widget.RecyclerView>
@@ -16,6 +16,7 @@
     <TextView
         android:id="@+id/tv_jump_canlendar"
         android:layout_width="50dp"
-        android:text="跳转"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="跳转"/>
 </LinearLayout>

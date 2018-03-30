@@ -31,14 +31,14 @@ public class PictureView extends View {
     }
 
     public PictureView(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs, -1);
+        super(context, attrs);
+        mPicturePaint = new Paint();
+        mTextPaint = new Paint();
+        mTextPaint.setTextSize(15);
     }
 
     public PictureView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        mPicturePaint = new Paint();
-        mTextPaint = new Paint();
-        mTextPaint.setTextSize(15);
     }
 
     @Override
@@ -77,28 +77,25 @@ public class PictureView extends View {
 
             top = mHeightSize - height * (mHeightSize - top);
 
-            mTextPaint.setColor(Color.BLACK);
-            if (prictureBean.isLowProce) {
-                mTextPaint.setColor(Color.RED);
-            }
+            mTextPaint.setColor(Color.parseColor("#256ffd"));
             if (mSelectPosition == i) {
-                mTextPaint.setColor(Color.BLUE);
+                mTextPaint.setColor(Color.parseColor("#4595f3"));
             }
 
             canvas.drawText(prictureBean.PriceDes + i, left + width / 2 - priceTextHeight, top - priceTextHeight, mTextPaint);
 
-            mPicturePaint.setColor(Color.BLUE);
+            mPicturePaint.setColor(Color.parseColor("#4595f3"));
             if (mSelectPosition == i) {
-                mPicturePaint.setColor(Color.GREEN);
+                mPicturePaint.setColor(Color.parseColor("#256ffd"));
             }
             canvas.drawRect(left + 5, top, right, bottom - timeTextHeight * 3, mPicturePaint);
 
-            mPicturePaint.setColor(Color.BLACK);
+            mPicturePaint.setColor(Color.parseColor("#256ffd"));
             mPicturePaint.setStrokeWidth(5);
             canvas.drawLine(i == 0 ? left + 5 : left, bottom - timeTextHeight * 3, right, bottom - timeTextHeight * 3, mPicturePaint);
 
 
-            mTextPaint.setColor(Color.BLACK);
+            mTextPaint.setColor(Color.parseColor("#4595f3"));
             if (i == 0) {
                 canvas.drawText(prictureBean.time + i, left, bottom, mTextPaint);
                 canvas.drawText(prictureBean.time + i, right - timeTextHeight, bottom, mTextPaint);

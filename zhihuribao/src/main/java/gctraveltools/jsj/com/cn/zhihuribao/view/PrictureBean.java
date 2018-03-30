@@ -11,6 +11,5 @@ public class PrictureBean {
     public float Percentage = 0;
     public String PriceDes = "";
     public String time = "";
-    public boolean isLowProce = false;
 
 }

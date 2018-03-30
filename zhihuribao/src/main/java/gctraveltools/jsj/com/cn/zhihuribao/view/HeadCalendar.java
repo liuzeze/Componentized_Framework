@@ -9,7 +9,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
@@ -37,6 +36,7 @@ public class HeadCalendar extends FrameLayout {
     //日
     private ArrayList<Integer> days = new ArrayList<Integer>();
     private ArrayList<CalendarBean> mDateList = new ArrayList<>();
+    private OnClickCalendarListener mCalendarListener;
 
     public HeadCalendar(@NonNull Context context) {
         this(context, null);
@@ -84,14 +84,17 @@ public class HeadCalendar extends FrameLayout {
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Toast.makeText(getContext(), mDateList.get(position).des, Toast.LENGTH_SHORT).show();
+                if (mCalendarListener != null) {
+                    mCalendarListener.onSelectData();
+                }
             }
         });
         jump.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "跳转", Toast.LENGTH_SHORT).show();
-
+                if (mCalendarListener != null) {
+                    mCalendarListener.onShowCanlendar();
+                }
             }
         });
 
@@ -144,5 +147,16 @@ public class HeadCalendar extends FrameLayout {
     protected boolean afterDay(int year, int month, int Day) {
         return (year == mNowYear + 1 && month > mNowMonth) || (year == mNowYear + 1 && month == mNowMonth && Day >= mNowDay);
     }
+
+    public void setOnClickCalendarListener(OnClickCalendarListener onClickCalendarListener) {
+        mCalendarListener = onClickCalendarListener;
+    }
+
+    public interface OnClickCalendarListener {
+        void onShowCanlendar();
+
+        void onSelectData();
+    }
+
 
 }
