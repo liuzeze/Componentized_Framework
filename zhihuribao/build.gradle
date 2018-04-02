@@ -1,6 +1,5 @@
 if (rootProject.ext.isPlugin) {
     apply plugin: 'com.android.library'
-//    apply plugin: 'com.jakewharton.butterknife'
 } else {
     apply plugin: 'com.android.application'
 }
@@ -61,5 +60,4 @@ dependencies {
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     //依赖注入 编译需要
     annotationProcessor rootProject.ext.dependencies.dagger2_compiler
-    annotationProcessor rootProject.ext.dependencies.butterknife_compiler
 }

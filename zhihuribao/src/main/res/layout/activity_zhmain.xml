@@ -16,51 +16,69 @@
         android:layout_gravity="center"
         android:progressDrawable="@drawable/sample_footer_loading"/>
 
-    <TextView
-        android:id="@+id/textview"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="50px"
-        android:background="@color/colorAccent"
-        android:gravity="center"
-        android:text="下滑关闭空间"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textview2"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_below="@+id/textview"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorAccent"
-        android:gravity="center"
-        android:text="股票联动列表"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textview3"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_below="@+id/textview2"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorAccent"
-        android:gravity="center"
-        android:text="自定义列表头部悬浮"/>
-    <TextView
-        android:id="@+id/textview4"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_below="@+id/textview3"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorAccent"
-        android:gravity="center"
-        android:text="柱状图"/>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerview"
+            <TextView
+                android:id="@+id/textview"
+                android:layout_width="match_parent"
+                android:layout_height="50px"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="下滑关闭控件"/>
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textview4"
-        android:clipToPadding="false"
-        android:nestedScrollingEnabled="false"
-        android:paddingTop="30dp">
-    </android.support.v7.widget.RecyclerView>
+            <TextView
+                android:id="@+id/textview2"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="股票联动列表"/>
+
+            <TextView
+                android:id="@+id/textview3"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="自定义列表头部悬浮"/>
+
+            <TextView
+                android:id="@+id/textview4"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="柱状图"/>
+
+            <TextView
+                android:id="@+id/textview5"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="放大镜实现"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:paddingTop="30dp">
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

@@ -110,6 +110,12 @@ public class ZHMainActivity extends BaseZHActivity<ZhiHuPresenter> implements Zh
                 startActivity(new Intent(mContext, PictureActivity.class));
             }
         });
+        findViewById(R.id.textview5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(mContext, MagnifyingGlassActivity.class));
+            }
+        });
         //观察数据变化来刷新UI
         mPresenter.getLiveObservableData().observe(this, new Observer<String>() {
             @Override
