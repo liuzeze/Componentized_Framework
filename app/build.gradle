@@ -48,6 +48,7 @@ dependencies {
         implementation project(':servers1')
         implementation project(':zhihuribao')
         implementation project(':douban')
+        implementation project(':demomodule')
     } else {
 
     }
