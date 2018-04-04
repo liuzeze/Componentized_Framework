@@ -34,14 +34,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
 
-                if (mBoolean) {
-                    mView1.animate().translationY(-100).setDuration(500).start();
-                    mView2.animate().translationY(0).setDuration(500).start();
-                } else {
-                    mView1.animate().translationY(0).setDuration(500).start();
-                    mView2.animate().translationY(100).setDuration(500).start();
-                }
-                mBoolean = !mBoolean;
+                titleAnima();
 
                 // 1. 应用内简单的跳转(通过URL跳转在'进阶用法'中)
                 ARouter.getInstance()
@@ -54,6 +47,7 @@ public class MainActivity extends BaseActivity {
         ((Button) findViewById(R.id.button2)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                titleAnima();
                 // 1. 应用内简单的跳转(通过URL跳转在'进阶用法'中)
                 ARouter.getInstance()
                         .build(ARouterPath.ZhiHUAty)
@@ -64,6 +58,7 @@ public class MainActivity extends BaseActivity {
         ((Button) findViewById(R.id.button3)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                titleAnima();
                 // 1. 应用内简单的跳转(通过URL跳转在'进阶用法'中)
                 ARouter.getInstance()
                         .build(ARouterPath.DouBanAty)
@@ -71,7 +66,29 @@ public class MainActivity extends BaseActivity {
 
             }
         });
+        ((Button) findViewById(R.id.button4)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                titleAnima();
+                // 1. 应用内简单的跳转(通过URL跳转在'进阶用法'中)
+                ARouter.getInstance()
+                        .build(ARouterPath.DemoAty)
+                        .navigation();
 
+            }
+        });
+
+    }
+
+    private void titleAnima() {
+        if (mBoolean) {
+            mView1.animate().translationY(-100).setDuration(500).start();
+            mView2.animate().translationY(0).setDuration(500).start();
+        } else {
+            mView1.animate().translationY(0).setDuration(500).start();
+            mView2.animate().translationY(100).setDuration(500).start();
+        }
+        mBoolean = !mBoolean;
     }
 
 }

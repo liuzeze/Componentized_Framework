@@ -4,8 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+
+import gctraveltools.jsj.com.cn.commonlib.ARouterPath;
 import gctraveltools.jsj.com.cn.commonlib.base.BaseActivity;
 import gctraveltools.jsj.com.cn.demomodule.coordinator.CoordinatorLayoutActivity;
+
+@Route(path = ARouterPath.DemoAty)
 
 public class DemoMainActivity extends BaseActivity {
 

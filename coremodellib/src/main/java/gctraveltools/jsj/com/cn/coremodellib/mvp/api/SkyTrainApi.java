@@ -33,8 +33,31 @@ public class SkyTrainApi {
         if (instance == null) {
             instance = new SkyTrainApi();
         }
+        //冒泡排序
+        int[] a = new int[]{};
+        for (int i = 0; i < a.length - 1; i++) {
+            for (int i1 = i +1; i1 < a.length; i1++) {
+                if (a[i] < a[i1]) {
+                    int temp = a[i];
+                    a[i + 1] = a[i];
+                    a[i] = temp;
+                }
+            }
+        }
+
+        //选择排序
+        for (int i = 0; i < a.length ; i++) {
+            for (int i1 = i+1; i1 < a.length; i1++) {
+                if (a[i] > a[i1]) {
+                    int temp = a[i];
+                    a[i + 1] = a[i];
+                    a[i] = temp;
+                }
+            }
+        }
         return instance;
     }
+
 
     public CommonSubscriber<GetTravels2Response> getTravelList(CommonSubscriber<GetTravels2Response> subscriber) {
         //创建请求实体对象
@@ -42,12 +65,12 @@ public class SkyTrainApi {
         //设置基础的Request
         request.baseRequest = BaseProtoNanoFactory.getBaseReq();
         request.isshowFlightDynamic = true;
-        request.jSJID = 1;
+        request.jSJID = 3113724;
         request.travelTypes = new int[]{TravelType.AirportTravel, TravelType.RailportTravel};
 
         //由于接口返回的数据都是使用ZRes进行压缩的，所以我们需要处理一下变成我们需要的数据
         return RxHttp.getInstance()
-                .baseUrl("")
+                .baseUrl("http://jsj-recommend.jsjinfo.cn/v3/Hosts/TravelApi.aspx/")
                 .connectTimeout(60)
                 .readTimeout(60)
                 .writeTimeout(60)

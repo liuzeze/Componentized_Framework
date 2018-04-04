@@ -1,8 +1,10 @@
-if (rootProject.ext.isPlugin) {
-    apply plugin: 'com.android.library'
+def currentModule = rootProject.modules.douban
+
+if (currentModule.isStandalone) {
+    apply plugin: 'com.android.application'
 //apply plugin: 'com.jakewharton.butterknife'
 } else {
-    apply plugin: 'com.android.application'
+    apply plugin: 'com.android.library'
 }
 
 android {
@@ -13,18 +15,20 @@ android {
     }
 
     defaultConfig {
-        if (!rootProject.ext.isPlugin) {
-            applicationId "gctraveltools.jsj.com.cn.douban"
-        }
-        minSdkVersion 15
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+            if (currentModule.isStandalone) {
+                applicationId currentModule.applicationId
+                minSdkVersion 15
+                targetSdkVersion 26
+                versionCode 1
+                versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+                testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+            }
+
+            def moduleName = project.getName()
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [moduleName: "douban"]
+                arguments = [moduleName: moduleName]
             }
         }
     }
@@ -39,7 +43,7 @@ android {
 
     sourceSets {
         main {
-            if (!rootProject.ext.isPlugin) {
+            if (currentModule.isStandalone) {
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'

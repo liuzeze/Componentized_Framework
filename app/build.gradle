@@ -16,7 +16,7 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [ moduleName : "app" ]
+                arguments = [moduleName: "app"]
             }
         }
     }
@@ -44,13 +44,29 @@ dependencies {
 
     //依赖注入 编译需要
     annotationProcessor rootProject.ext.dependencies.dagger2_compiler
-    if (rootProject.ext.isPlugin) {
-        implementation project(':servers1')
-        implementation project(':zhihuribao')
-        implementation project(':douban')
-        implementation project(':demomodule')
-    } else {
 
+    def modules = rootProject.modules
+    def isDemoStandalone = modules.demomodule.isStandalone
+    def isDouBanStandalone = modules.douban.isStandalone
+    def isServerStandalone = modules.servers1.isStandalone
+    def isZhiHuStandalone = modules.zhihuribao.isStandalone
+    // 判断业务组件是否独立运行，实现业务组件的灵活依赖
+    if (isDemoStandalone && isDouBanStandalone && isServerStandalone && isZhiHuStandalone) {
+        implementation project(':commonlib')
+    } else {
+        if (!isDemoStandalone) {
+            implementation project(':demomodule')
+        }
+        if (!isDouBanStandalone) {
+            implementation project(':douban')
+        }
+        if (!isServerStandalone) {
+            implementation project(':servers1')
+        }
+        if (!isZhiHuStandalone) {
+            implementation project(':zhihuribao')
+        }
     }
+
 }
 

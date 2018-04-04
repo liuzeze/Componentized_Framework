@@ -110,12 +110,13 @@ public class MySelfBehavior extends CoordinatorLayout.Behavior<View> {
     public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) {
         int measuredHeight = child.getMeasuredHeight();
         int top = dependency.getTop();
-        System.out.println("top===" + top + "mTranslationY===="+mTranslationY);
+        System.out.println("top===" + top + "mTranslationY====" + mTranslationY);
         if (top < mTranslationY) {//上滑
             child.animate().translationY(measuredHeight).setDuration(300).start();
         } else {//下滑
             child.animate().translationY(0).setDuration(300).start();
         }
+        mTranslationY = top;
         return true;
     }
 

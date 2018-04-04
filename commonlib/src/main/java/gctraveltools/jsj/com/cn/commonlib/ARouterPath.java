@@ -14,7 +14,10 @@ public class ARouterPath {
     public static final String ZhiHUAty = "/zhihu/main/activity";
 
     /**豆瓣组件的Activity*/
-    public static final String DouBanAty = "/douban/main/activity";
+    public static final String  DouBanAty = "/douban/main/activity";
+
+    /**demo组件的Activity*/
+    public static final String DemoAty = "/demo/main/activity";
 
 
 }

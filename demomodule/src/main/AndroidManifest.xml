@@ -4,6 +4,8 @@
 
     <application>
         <activity android:name=".DemoMainActivity"/>
+        <activity android:name=".coordinator.CoordinatorLayoutActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="theme_noActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+
+        <!--窗口操作栏是否显示-->
+        <item name="windowActionBar">false</item>
+        <!--窗口没有标题-->
+        <item name="windowNoTitle">true</item>
+        <!--ToolBar菜单文字颜色-->
+        <item name="actionMenuTextColor">#111111</item>
+    </style>
+    <!--************继承了cn.com.jsj.GCTravelTools.mvp.base.BaseActivity的需要在AndroidManifest.xml中使用这个主题************-->
+
+
+</resources>
