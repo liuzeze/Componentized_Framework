@@ -61,7 +61,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation project(':commonlib')
 
-    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     //依赖注入 编译需要
+    annotationProcessor rootProject.ext.dependencies.arouter_compiler
     annotationProcessor rootProject.ext.dependencies.dagger2_compiler
 }

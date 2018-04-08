@@ -10,8 +10,7 @@
         </activity>
         <activity
             android:name=".DoubanDetailActivity"
-            android:label="@string/title_activity_douban_detail"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/title_activity_douban_detail">
         </activity>
         <activity android:name=".DouBanWebDetailActivity">
         </activity>

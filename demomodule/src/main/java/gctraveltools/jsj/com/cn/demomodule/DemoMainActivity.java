@@ -8,6 +8,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 
 import gctraveltools.jsj.com.cn.commonlib.ARouterPath;
 import gctraveltools.jsj.com.cn.commonlib.base.BaseActivity;
+import gctraveltools.jsj.com.cn.demomodule.dragview.DragFloatActionButtonActivity;
 import gctraveltools.jsj.com.cn.demomodule.coordinator.CoordinatorLayoutActivity;
 
 @Route(path = ARouterPath.DemoAty)
@@ -22,6 +23,11 @@ public class DemoMainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DemoMainActivity.this, CoordinatorLayoutActivity.class));
+            }
+        }); findViewById(R.id.textview2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DemoMainActivity.this, DragFloatActionButtonActivity.class));
             }
         });
     }

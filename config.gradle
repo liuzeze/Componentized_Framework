@@ -1,5 +1,29 @@
 ext {
-    isPlugin = isModule.toBoolean();//true:作为Lib组件存在， false:作为application存在
+
+
+    applicationId = "gctraveltools.jsj.com.cn.newgctraveltools"
+
+    // 通过更改isStandalone的值实现业务模块是否独立运行，以及app壳工程对组件的灵活依赖
+    modules = [
+            demomodule: [
+                    isStandalone : true,
+                    applicationId: "${applicationId}.demomodule",
+            ],
+            douban  : [
+                    isStandalone : false,
+                    applicationId: "${applicationId}.douban",
+            ],
+            servers1: [
+                    isStandalone : false,
+                    applicationId: "${applicationId}.servers1"
+            ],
+            zhihuribao: [
+                    isStandalone : false,
+                    applicationId: "${applicationId}.zhihuribao"
+            ],
+    ]
+
+
 
     android = [
 
@@ -130,6 +154,11 @@ ext {
 
             //三方权限封装库
             permission                   : "com.yanzhenjie:permission:1.0.5",
+
+
+            //arouter  路由跳转
+            arouter_compiler                  : "com.alibaba:arouter-compiler:1.1.4",
+            arouter                  : "com.alibaba:arouter-api:1.2.4",
 
             //  implementation 'javax.annotation:javax.annotation-api:1.2'
 

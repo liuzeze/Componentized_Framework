@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".coordinator.CoordinatorLayoutActivity">
         </activity>
+        <activity android:name=".dragview.DragFloatActionButtonActivity">
+        </activity>
     </application>
 
 </manifest>

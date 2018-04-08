@@ -25,6 +25,15 @@
                 android:gravity="center"
                 android:text="协调布局!"/>
 
+            <TextView
+                android:id="@+id/textview2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="页面拖动控件!"/>
+
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
