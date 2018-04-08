@@ -13,8 +13,9 @@
             <option value="$PROJECT_DIR$/coremodellib" />
             <option value="$PROJECT_DIR$/demomodule" />
             <option value="$PROJECT_DIR$/douban" />
+            <option value="$PROJECT_DIR$/module_main" />
+            <option value="$PROJECT_DIR$/module_proto" />
             <option value="$PROJECT_DIR$/opensourcelib" />
-            <option value="$PROJECT_DIR$/servers1" />
             <option value="$PROJECT_DIR$/zhihuribao" />
           </set>
         </option>

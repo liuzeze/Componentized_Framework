@@ -86,7 +86,7 @@ public class DouBanMainActivity extends BaseDoubanActivity<DouBanListPresenter,A
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swiperefreshlayout);
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
         mAdapter = new DouBanMovieListAdapter(mMovieLists);
         DividerItemDecoration itemDecoration = new DividerItemDecoration(this,
                 DividerItemDecoration.VERTICAL);
@@ -115,11 +115,11 @@ public class DouBanMainActivity extends BaseDoubanActivity<DouBanListPresenter,A
                 View img = view.findViewById(R.id.simpledraweeview);
                 img.setTransitionName("moviesimg");
                 //第一个页面
-                Intent intent = new Intent(mContext, DoubanDetailActivity.class);
+                Intent intent = new Intent(mActivity, DoubanDetailActivity.class);
                 intent.putExtra("id", mMovieLists.get(position).getId());
                 intent.putExtra("imgurl", mMovieLists.get(position).getImages().getMedium());
                 //第二个参数：共享元素的view  第三个参数:在xml文件中定义的transitionName
-                ActivityOptionsCompat moviesimg = ActivityOptionsCompat.makeSceneTransitionAnimation(mContext,
+                ActivityOptionsCompat moviesimg = ActivityOptionsCompat.makeSceneTransitionAnimation(mActivity,
                         img,
                         "moviesimg");
                 startActivity(intent, moviesimg.toBundle());

@@ -73,7 +73,7 @@ public class ZHMainActivity extends BaseZHActivity<ZhiHuPresenter> implements Zh
         mAdapter.setOnItemClickListener(new BaseBindingRecycleViewAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(mContext, ZHNewsDetailActivity.class);
+                Intent intent = new Intent(mActivity, ZHNewsDetailActivity.class);
                 intent.putExtra("ZHIHUNEWSDETAIL", mStories.get(position).getId() + "");
                 startActivity(intent);
             }
@@ -89,31 +89,31 @@ public class ZHMainActivity extends BaseZHActivity<ZhiHuPresenter> implements Zh
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(mContext, LayoutImgActivity.class));
+                startActivity(new Intent(mActivity, LayoutImgActivity.class));
             }
         });
         findViewById(R.id.textview2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(mContext, ScrollActivity.class));
+                startActivity(new Intent(mActivity, ScrollActivity.class));
             }
         });
         findViewById(R.id.textview3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(mContext, SuspendActivity.class));
+                startActivity(new Intent(mActivity, SuspendActivity.class));
             }
         });
         findViewById(R.id.textview4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(mContext, PictureActivity.class));
+                startActivity(new Intent(mActivity, PictureActivity.class));
             }
         });
         findViewById(R.id.textview5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(mContext, MagnifyingGlassActivity.class));
+                startActivity(new Intent(mActivity, MagnifyingGlassActivity.class));
             }
         });
         //观察数据变化来刷新UI

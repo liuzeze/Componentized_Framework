@@ -8,8 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/coremodellib/coremodellib.iml" filepath="$PROJECT_DIR$/coremodellib/coremodellib.iml" />
       <module fileurl="file://$PROJECT_DIR$/demomodule/demomodule.iml" filepath="$PROJECT_DIR$/demomodule/demomodule.iml" />
       <module fileurl="file://$PROJECT_DIR$/douban/douban.iml" filepath="$PROJECT_DIR$/douban/douban.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_main/module_main.iml" filepath="$PROJECT_DIR$/module_main/module_main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_proto/module_proto.iml" filepath="$PROJECT_DIR$/module_proto/module_proto.iml" />
       <module fileurl="file://$PROJECT_DIR$/opensourcelib/opensourcelib.iml" filepath="$PROJECT_DIR$/opensourcelib/opensourcelib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/servers1/servers1.iml" filepath="$PROJECT_DIR$/servers1/servers1.iml" />
       <module fileurl="file://$PROJECT_DIR$/zhihuribao/zhihuribao.iml" filepath="$PROJECT_DIR$/zhihuribao/zhihuribao.iml" />
     </modules>
   </component>

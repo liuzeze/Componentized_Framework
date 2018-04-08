@@ -41,15 +41,14 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation project(':commonlib')
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
-
     //依赖注入 编译需要
     annotationProcessor rootProject.ext.dependencies.dagger2_compiler
-
     def modules = rootProject.modules
     def isDemoStandalone = modules.demomodule.isStandalone
     def isDouBanStandalone = modules.douban.isStandalone
     def isServerStandalone = modules.servers1.isStandalone
     def isZhiHuStandalone = modules.zhihuribao.isStandalone
+    def isMainStandalone = modules.main.isStandalone
     // 判断业务组件是否独立运行，实现业务组件的灵活依赖
     if (isDemoStandalone && isDouBanStandalone && isServerStandalone && isZhiHuStandalone) {
         implementation project(':commonlib')
@@ -61,12 +60,14 @@ dependencies {
             implementation project(':douban')
         }
         if (!isServerStandalone) {
-            implementation project(':servers1')
+            implementation project(':module_proto')
         }
         if (!isZhiHuStandalone) {
             implementation project(':zhihuribao')
         }
+        if (!isMainStandalone) {
+            implementation project(':module_main')
+        }
     }
-
 }
 

@@ -96,7 +96,7 @@ public class DoubanDetailActivity extends BaseDoubanActivity<DouBanDetailPresent
         mSimpledraweeview.setImageURI(mImgurl);
         mPresenter.getMovieDetailReq(mId);
 
-        LinearLayoutManager layout = new LinearLayoutManager(mContext);
+        LinearLayoutManager layout = new LinearLayoutManager(mActivity);
         layout.setOrientation(LinearLayoutManager.HORIZONTAL);
         mMovieDetailActorList.setLayoutManager(layout);
         mAdapter = new DouBanMoviepeopleAdapter(mCasts);
@@ -115,7 +115,7 @@ public class DoubanDetailActivity extends BaseDoubanActivity<DouBanDetailPresent
             @Override
             public void onClick(View view) {
                 if (mMovieListBean != null) {
-                    Intent intent = new Intent(mContext, DouBanWebDetailActivity.class);
+                    Intent intent = new Intent(mActivity, DouBanWebDetailActivity.class);
                     intent.putExtra("url", mMovieListBean.getScheduleUrl());
                     startActivity(intent);
                 }

@@ -83,7 +83,7 @@ public class ZHNewsDetailActivity extends BaseZHActivity<ZhiHuDetailPresenter> i
 
         mRecyclerview = (RecyclerView) findViewById(R.id.recyclerview);
         mRecyclerview.setHasFixedSize(true);
-        mRecyclerview.setLayoutManager(new LinearLayoutManager(mContext));
+        mRecyclerview.setLayoutManager(new LinearLayoutManager(mActivity));
         mAdapter = new ZHCommentListAdapter(mComments);
         DividerItemDecoration itemDecoration = new DividerItemDecoration(this,
                 DividerItemDecoration.VERTICAL);

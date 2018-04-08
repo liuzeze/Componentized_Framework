@@ -31,7 +31,7 @@ public class DouBanFixActivity extends BaseActivity {
         mButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FixDexUtils.loadFixedDex(mContext, Environment.getExternalStorageDirectory());
+                FixDexUtils.loadFixedDex(mActivity, Environment.getExternalStorageDirectory());
 
             }
         });
