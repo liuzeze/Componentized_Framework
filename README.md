@@ -4,6 +4,7 @@
 # 技术框架(rxjava2+retrofit+mvp) 
 * Rxjava 
 * Retrofit
+* okhttp
 * Dagger
 * Arouter
 * Fressco
