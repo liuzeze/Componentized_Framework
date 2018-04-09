@@ -82,6 +82,8 @@ dependencies {
 
     api files('libs/tbs_sdk_thirdapp_v3.5.0.1004_43500_sharewithdownload_withoutGame_obfs_20170801_113025.jar')
 
+    debugApi 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseApi 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     /* //二维码处理工具包
          api rootProject.ext.dependencies.zxing
          //recycleview加载动画处理工具包

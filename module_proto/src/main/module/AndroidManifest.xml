@@ -3,7 +3,7 @@
           package="gctraveltools.jsj.com.cn.servers1">
 
     <application
-        android:name="gctraveltools.jsj.com.cn.module_main.MainApplication"
+        android:name="debug.ServerApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

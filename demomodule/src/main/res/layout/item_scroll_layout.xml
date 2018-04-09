@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="名称"/>
+
+    <gctraveltools.jsj.com.cn.demomodule.scroll.IntercepteLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <gctraveltools.jsj.com.cn.demomodule.scroll.SynScrollerview
+            android:id="@+id/synscrollerview"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="子条目1"/>
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="子条目2"/>
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="子条目3"/>
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="子条目4"/>
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="子条目5"/>
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="子条目6"/>
+
+            </LinearLayout>
+        </gctraveltools.jsj.com.cn.demomodule.scroll.SynScrollerview>
+    </gctraveltools.jsj.com.cn.demomodule.scroll.IntercepteLayout>
+
+</LinearLayout>

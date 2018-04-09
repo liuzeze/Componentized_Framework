@@ -23,10 +23,9 @@ import gctraveltools.jsj.com.cn.zhihuribao.adapter.ZHListAdapter;
 import gctraveltools.jsj.com.cn.zhihuribao.bean.NewsBean;
 import gctraveltools.jsj.com.cn.zhihuribao.presenter.ZhiHuContract;
 import gctraveltools.jsj.com.cn.zhihuribao.presenter.ZhiHuPresenter;
-import gctraveltools.jsj.com.cn.zhihuribao.recyclerview.BaseBindingRecycleViewAdapter;
-import gctraveltools.jsj.com.cn.zhihuribao.suspendhead.SuspendActivity;
-import gctraveltools.jsj.com.cn.zhihuribao.view.RecyclerViewDecoration;
-import gctraveltools.jsj.com.cn.zhihuribao.view.SimpleItemTouchHelperCallback;
+import gctraveltools.jsj.com.cn.commonlib.widget.recyclerview.BaseBindingRecycleViewAdapter;
+import gctraveltools.jsj.com.cn.commonlib.widget.recyclerview.RecyclerViewDecoration;
+import gctraveltools.jsj.com.cn.commonlib.widget.recyclerview.SimpleItemTouchHelperCallback;
 
 @Route(path = ARouterPath.ZhiHUAty)
 public class ZHMainActivity extends BaseZHActivity<ZhiHuPresenter> implements ZhiHuContract.View {
@@ -78,49 +77,11 @@ public class ZHMainActivity extends BaseZHActivity<ZhiHuPresenter> implements Zh
                 startActivity(intent);
             }
         });
-        /*mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
 
-            }
-        });*/
-
-        mTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                startActivity(new Intent(mActivity, LayoutImgActivity.class));
-            }
-        });
-        findViewById(R.id.textview2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(mActivity, ScrollActivity.class));
-            }
-        });
-        findViewById(R.id.textview3).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(mActivity, SuspendActivity.class));
-            }
-        });
-        findViewById(R.id.textview4).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(mActivity, PictureActivity.class));
-            }
-        });
-        findViewById(R.id.textview5).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(mActivity, MagnifyingGlassActivity.class));
-            }
-        });
         //观察数据变化来刷新UI
         mPresenter.getLiveObservableData().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String newsData) {
-                System.out.println("页面销毁了");
 
                 mProgressBar.setVisibility(View.GONE);
                 NewsBean newsBean = new Gson().fromJson(newsData, NewsBean.class);

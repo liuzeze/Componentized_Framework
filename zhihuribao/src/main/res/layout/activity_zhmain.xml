@@ -25,49 +25,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textview"
-                android:layout_width="match_parent"
-                android:layout_height="50px"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:text="下滑关闭控件"/>
-
-            <TextView
-                android:id="@+id/textview2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:text="股票联动列表"/>
-
-            <TextView
-                android:id="@+id/textview3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:text="自定义列表头部悬浮"/>
-
-            <TextView
-                android:id="@+id/textview4"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:text="柱状图"/>
-
-            <TextView
-                android:id="@+id/textview5"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:text="放大镜实现"/>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerview"

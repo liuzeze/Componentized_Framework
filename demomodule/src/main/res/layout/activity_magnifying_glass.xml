@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="30dp"
+        android:lineSpacingExtra="5dp"
+        android:text="aaaaaaaaaaaaasfdsgjkhgjkahdgjsdhgjsahgj
+    khgjhdgfdghjksagdhjhgjghsjkdghsjghjkdgaaaaaaaaaaaaasfdsgjkhgjkahdgjsdhgjsahgj
+    khgjhdgfdghjksagdhjhgjghsjkdghsjghjkdgaaaaaaaaaaaaasfdsgjkhgjkahdgjsdhgjsahgj
+    khgjhdgfdghjksagdhjhgjghsjkdghsjghjkdgaaaaaaaaaaaaasfdsgjkhgjkahdgjsdhgjsahgj
+    khgjhdgfdghjksagdhjhgjghsjkdghsjghjkdgaaaaaaaaaaaaasfdsgjkhgjkahdgjsdhgjsahgj
+    khgjhdgfdghjksagdhjhgjghsjkdghsjghjkdgaaaaaaaaaaaaasfdsgjkhgjkahdgjsdhgjsahgj
+    khgjhdgfdghjksagdhjhgjghsjkdghsjghjkdgaaaaaaaaaaaaasfdsgjkhgjkahdgjsdhgjsahgj
+    khgjhdgfdghjksagdhjhgjghsjkdghsjghjkdgaaaaaaaaaaaaasfdsgjkhgjkahdgjsdhgjsahgj
+    khgjhdgfdghjksagdhjhgjghsjkdghsjghjkdgaaaaaaaaaaaaasfdsgjkhgjkahdgjsdhgjsahgj
+    khgjhdgfdghjksagdhjhgjghsjkdghsjghjkdgaaaaaaaaaaaaasfdsgjkhgjkahdgjsdhgjsahgj
+    khgjhdgfdghjksagdhjhgjghsjkdghsjghjkdgaaaaaaaaaaaaasfdsgjkhgjkahdgjsdhgjsahgj
+    khgjhdgfdghjksagdhjhgjghsjkdghsjghjkdgaaaaaaaaaaaaasfdsgjkhgjkahdgjsdhgjsahgj
+    khgjhdgfdghjksagdhjhgjghsjkdghsjghjkdgaaaaaaaaaaaaasfdsgjkhgjkahdgjsdhgjsahgj
+    khgjhdgfdghjksagdhjhgjghsjkdghsjghjkdg"/>
+    <gctraveltools.jsj.com.cn.demomodule.fangdajing.MagnifyingView
+        android:id="@+id/MagnifyingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</RelativeLayout>

@@ -10,5 +10,5 @@
         android:layout_height="100dp"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="150dp"
-        android:background="@color/cardview_dark_background"/>
+        android:background="@mipmap/drag_view"/>
 </FrameLayout>

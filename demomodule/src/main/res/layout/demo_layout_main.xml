@@ -34,6 +34,51 @@
                 android:gravity="center"
                 android:text="页面拖动控件!"/>
 
+            <TextView
+                android:id="@+id/textview3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="下滑销毁页面!"/>
+
+            <TextView
+                android:id="@+id/textview4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="股票联动列表!"/>
+
+            <TextView
+                android:id="@+id/textview5"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="日历柱状图"/>
+
+            <TextView
+                android:id="@+id/textview6"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="自定义列表头部悬浮"/>
+
+            <TextView
+                android:id="@+id/textview7"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="放大镜实现"/>
+
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

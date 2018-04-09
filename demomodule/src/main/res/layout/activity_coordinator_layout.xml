@@ -14,7 +14,7 @@
             android:layout_height="match_parent"
             app:collapsedTitleGravity="center"
             app:contentScrim="@color/colorAccent"
-            app:expandedTitleGravity="center"
+            app:expandedTitleGravity="left"
             app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
             app:title="测试">
 

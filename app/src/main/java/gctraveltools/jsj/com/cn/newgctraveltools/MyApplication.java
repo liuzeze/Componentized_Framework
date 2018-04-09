@@ -1,5 +1,7 @@
 package gctraveltools.jsj.com.cn.newgctraveltools;
 
+import com.squareup.leakcanary.LeakCanary;
+
 import gctraveltools.jsj.com.cn.commonlib.base.BaseApplication;
 
 /**
@@ -14,7 +16,7 @@ public class MyApplication extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        LeakCanary.install(this);
     }
 
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <gctraveltools.jsj.com.cn.demomodule.calendar.HeadCalendar
+                android:id="@+id/HeadCalendar"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"/>
+            <TextView
+                android:id="@+id/TextView"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="0"
+                android:background="@color/colorPrimary"/>
+
+            <gctraveltools.jsj.com.cn.demomodule.calendar.PictureView
+                android:id="@+id/PictureView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="10000px"
+                android:background="@color/colorAccent"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

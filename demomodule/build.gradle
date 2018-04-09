@@ -7,7 +7,7 @@ if (currentModule.isStandalone) {
 }
 android {
     compileSdkVersion 26
-    resourcePrefix "demo_"
+
     dataBinding {
         enabled true
     }
@@ -19,7 +19,7 @@ android {
             targetSdkVersion 26
             versionCode 1
             versionName "1.0"
-
+            multiDexEnabled true
             testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         }
 

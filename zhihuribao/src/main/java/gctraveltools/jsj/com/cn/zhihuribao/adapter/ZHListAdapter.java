@@ -14,9 +14,9 @@ import gctraveltools.jsj.com.cn.zhihuribao.BR;
 import gctraveltools.jsj.com.cn.zhihuribao.R;
 import gctraveltools.jsj.com.cn.zhihuribao.bean.NewsBean;
 import gctraveltools.jsj.com.cn.zhihuribao.databinding.ItemZhListBinding;
-import gctraveltools.jsj.com.cn.zhihuribao.recyclerview.BaseBindingRecycleViewAdapter;
-import gctraveltools.jsj.com.cn.zhihuribao.recyclerview.BindingViewHolder;
-import gctraveltools.jsj.com.cn.zhihuribao.view.ItemTouchHelperInterFace;
+import gctraveltools.jsj.com.cn.commonlib.widget.recyclerview.BaseBindingRecycleViewAdapter;
+import gctraveltools.jsj.com.cn.commonlib.widget.recyclerview.BindingViewHolder;
+import gctraveltools.jsj.com.cn.commonlib.widget.recyclerview.ItemTouchHelperInterFace;
 
 /**
  * -------- 日期 ---------- 维护人 ------------ 变更内容 --------

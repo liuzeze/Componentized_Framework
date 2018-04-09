@@ -7,6 +7,16 @@
         <activity android:name=".coordinator.CoordinatorLayoutActivity"></activity>
         <activity android:name=".dragview.DragFloatActionButtonActivity">
         </activity>
+        <activity
+            android:name=".downfnish.LayoutImgActivity"
+            android:theme="@style/JSJ_theme.notAnimation"/>
+        <activity android:name=".scroll.ScrollActivity">
+        </activity>
+        <activity android:name=".calendar.PictureActivity">
+        </activity>
+        <activity android:name=".suspendhead.SuspendActivity"/>
+        <activity android:name=".fangdajing.MagnifyingGlassActivity"/>
+
     </application>
 
 </manifest>
