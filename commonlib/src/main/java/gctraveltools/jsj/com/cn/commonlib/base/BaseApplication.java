@@ -5,8 +5,10 @@ import android.app.Application;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
+import gctraveltools.jsj.com.cn.commonlib.util.Utils;
 import gctraveltools.jsj.com.cn.coremodellib.BuildConfig;
 import gctraveltools.jsj.com.cn.coremodellib.mvp.model.AppModule;
+import okhttp3.internal.Util;
 
 /**
  * 要想使用BaseApplication，必须在组件中实现自己的Application，并且继承BaseApplication；
@@ -36,9 +38,10 @@ public class BaseApplication extends Application {
             ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
         }
         ARouter.init(getInstance()); // 尽可能早，推荐在Application中初始化
+        //屏幕适配方式
+        ScreenAdaptation.register(this, 720);
+        Utils.init(this);
 
-        //屏幕适配需要传入ui设计给的大小
-        new ScreenAdaptation(this, 720, 1280).register();
 
         //frasco 初始化
         Fresco.initialize(this);
