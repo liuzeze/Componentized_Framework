@@ -62,15 +62,10 @@ public class SkyTrainApi {
     public CommonSubscriber<GetTravels2Response> getTravelList(CommonSubscriber<GetTravels2Response> subscriber) {
         //创建请求实体对象
         GetTravels2Request request = new GetTravels2Request();
-        //设置基础的Request
-        request.baseRequest = BaseProtoNanoFactory.getBaseReq();
-        request.isshowFlightDynamic = true;
-        request.jSJID = 3113724;
-        request.travelTypes = new int[]{TravelType.AirportTravel, TravelType.RailportTravel};
-
+      //实体数据赋值
         //由于接口返回的数据都是使用ZRes进行压缩的，所以我们需要处理一下变成我们需要的数据
         return RxHttp.getInstance()
-                .baseUrl("http://jsj-recommend.jsjinfo.cn/v3/Hosts/TravelApi.aspx/")
+                .baseUrl("自己的url")
                 .connectTimeout(60)
                 .readTimeout(60)
                 .writeTimeout(60)
