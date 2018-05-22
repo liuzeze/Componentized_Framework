@@ -84,6 +84,8 @@ dependencies {
 
     debugApi 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseApi 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    api 'com.orhanobut:logger:2.2.0'
+    api 'com.alibaba:fastjson:1.2.40'
     /* //二维码处理工具包
          api rootProject.ext.dependencies.zxing
          //recycleview加载动画处理工具包

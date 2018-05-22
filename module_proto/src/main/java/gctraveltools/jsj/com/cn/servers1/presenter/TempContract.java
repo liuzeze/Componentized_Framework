@@ -1,9 +1,10 @@
 package gctraveltools.jsj.com.cn.servers1.presenter;
 
 
-import gctraveltools.jsj.com.cn.coremodellib.model.proto.skytrain.nano.GetTravels2Response;
-import gctraveltools.jsj.com.cn.coremodellib.mvp.base.BasePresenter;
-import gctraveltools.jsj.com.cn.coremodellib.mvp.base.BaseView;
+import gctraveltools.jsj.com.cn.coremodellib.newmvp.base.BasePresenter;
+import gctraveltools.jsj.com.cn.coremodellib.newmvp.base.BaseView;
+import gctraveltools.jsj.com.cn.servers1.bean.nano.GetTravels2Response;
+
 
 /**
  * -------- 日期 ---------- 维护人 ------------ 变更内容 --------

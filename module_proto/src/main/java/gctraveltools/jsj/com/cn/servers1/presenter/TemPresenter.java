@@ -7,10 +7,11 @@ import android.widget.Toast;
 
 import javax.inject.Inject;
 
-import gctraveltools.jsj.com.cn.coremodellib.http.observer.CommonSubscriber;
-import gctraveltools.jsj.com.cn.coremodellib.model.proto.skytrain.nano.GetTravels2Response;
-import gctraveltools.jsj.com.cn.coremodellib.mvp.api.SkyTrainApi;
-import gctraveltools.jsj.com.cn.coremodellib.mvp.base.RxPresenter;
+import gctraveltools.jsj.com.cn.commonlib.util.Utils;
+import gctraveltools.jsj.com.cn.coremodellib.newmvp.base.RxPresenter;
+import gctraveltools.jsj.com.cn.coremodellib.newmvp.observer.CommonSubscriber;
+import gctraveltools.jsj.com.cn.servers1.api.SkyTrainApi;
+import gctraveltools.jsj.com.cn.servers1.bean.nano.GetTravels2Response;
 
 /**
  * -------- 日期 ---------- 维护人 ------------ 变更内容 --------
@@ -20,13 +21,10 @@ import gctraveltools.jsj.com.cn.coremodellib.mvp.base.RxPresenter;
 
 public class TemPresenter extends RxPresenter<TempContract.View> implements TempContract.Presenter {
 
-    private final Context mContext;
     private final SkyTrainApi mSkyTrainApi;
 
     @Inject
-    public TemPresenter(Application context, SkyTrainApi api) {
-        super(context);
-        mContext = context;
+    public TemPresenter( SkyTrainApi api) {
         mSkyTrainApi = api;
 
     }
@@ -52,7 +50,7 @@ public class TemPresenter extends RxPresenter<TempContract.View> implements Temp
             addSubscribe("getTravelList", mSkyTrainApi.getTravelList(subscriber));
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(Utils.getApp(), e.getMessage(), Toast.LENGTH_SHORT).show();
             if (mView != null) {
                 mView.showErrorMsg(e.getMessage()
                 );

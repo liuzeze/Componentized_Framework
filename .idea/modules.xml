@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NewGCTravelTools.iml" filepath="$PROJECT_DIR$/NewGCTravelTools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Componentized-_Framework.iml" filepath="$PROJECT_DIR$/Componentized-_Framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/commonlib/commonlib.iml" filepath="$PROJECT_DIR$/commonlib/commonlib.iml" />
       <module fileurl="file://$PROJECT_DIR$/coremodellib/coremodellib.iml" filepath="$PROJECT_DIR$/coremodellib/coremodellib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demomodule/demomodule.iml" filepath="$PROJECT_DIR$/demomodule/demomodule.iml" />
-      <module fileurl="file://$PROJECT_DIR$/douban/douban.iml" filepath="$PROJECT_DIR$/douban/douban.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_demo/module_demo.iml" filepath="$PROJECT_DIR$/module_demo/module_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_douban/module_douban.iml" filepath="$PROJECT_DIR$/module_douban/module_douban.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_main/module_main.iml" filepath="$PROJECT_DIR$/module_main/module_main.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_proto/module_proto.iml" filepath="$PROJECT_DIR$/module_proto/module_proto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_zh/module_zh.iml" filepath="$PROJECT_DIR$/module_zh/module_zh.iml" />
       <module fileurl="file://$PROJECT_DIR$/opensourcelib/opensourcelib.iml" filepath="$PROJECT_DIR$/opensourcelib/opensourcelib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zhihuribao/zhihuribao.iml" filepath="$PROJECT_DIR$/zhihuribao/zhihuribao.iml" />
     </modules>
   </component>
 </project>

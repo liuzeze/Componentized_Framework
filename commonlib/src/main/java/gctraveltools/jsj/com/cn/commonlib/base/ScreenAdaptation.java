@@ -1,10 +1,7 @@
 package gctraveltools.jsj.com.cn.commonlib.base;
 
-import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 import android.graphics.Point;
-import android.os.Bundle;
 import android.view.WindowManager;
 
 import static android.content.Context.WINDOW_SERVICE;
@@ -43,10 +40,10 @@ public class ScreenAdaptation {
         //获取屏幕的数值
         ((WindowManager) context.getSystemService(WINDOW_SERVICE)).getDefaultDisplay().getSize(point);
         //dp适配 getResources().getDisplayMetrics().density
-        context.getResources().getDisplayMetrics().density = point.x / width * 2f;
+        context.getResources().getDisplayMetrics().density = point.x / width ;
         // context.getResources().getDisplayMetrics().density = point.y/height*2f;
         //sp适配 getResources().getDisplayMetrics().scaledDensity
-        context.getResources().getDisplayMetrics().scaledDensity = point.x / width * 2f;
+        context.getResources().getDisplayMetrics().scaledDensity = point.x / width;
         //  context.getResources().getDisplayMetrics().scaledDensity = point.y/height*2f;
     }
 

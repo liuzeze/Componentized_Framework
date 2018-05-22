@@ -11,12 +11,12 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/commonlib" />
             <option value="$PROJECT_DIR$/coremodellib" />
-            <option value="$PROJECT_DIR$/demomodule" />
-            <option value="$PROJECT_DIR$/douban" />
+            <option value="$PROJECT_DIR$/module_demo" />
+            <option value="$PROJECT_DIR$/module_douban" />
             <option value="$PROJECT_DIR$/module_main" />
             <option value="$PROJECT_DIR$/module_proto" />
+            <option value="$PROJECT_DIR$/module_zh" />
             <option value="$PROJECT_DIR$/opensourcelib" />
-            <option value="$PROJECT_DIR$/zhihuribao" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

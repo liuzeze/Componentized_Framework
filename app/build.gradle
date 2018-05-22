@@ -54,16 +54,16 @@ dependencies {
         implementation project(':commonlib')
     } else {
         if (!isDemoStandalone) {
-            implementation project(':demomodule')
+            implementation project(':module_demo')
         }
         if (!isDouBanStandalone) {
-            implementation project(':douban')
+            implementation project(':module_douban')
         }
         if (!isServerStandalone) {
             implementation project(':module_proto')
         }
         if (!isZhiHuStandalone) {
-            implementation project(':zhihuribao')
+            implementation project(':module_zh')
         }
         if (!isMainStandalone) {
             implementation project(':module_main')

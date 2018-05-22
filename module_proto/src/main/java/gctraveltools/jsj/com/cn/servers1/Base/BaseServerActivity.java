@@ -7,10 +7,9 @@ import android.support.annotation.Nullable;
 import javax.inject.Inject;
 
 import gctraveltools.jsj.com.cn.commonlib.base.BaseActivity;
-import gctraveltools.jsj.com.cn.commonlib.base.BaseApplication;
-import gctraveltools.jsj.com.cn.coremodellib.mvp.base.BasePresenter;
-import gctraveltools.jsj.com.cn.coremodellib.mvp.base.BaseView;
-import gctraveltools.jsj.com.cn.coremodellib.mvp.model.ActivityModule;
+import gctraveltools.jsj.com.cn.coremodellib.newmvp.app.App;
+import gctraveltools.jsj.com.cn.coremodellib.newmvp.base.BasePresenter;
+import gctraveltools.jsj.com.cn.coremodellib.newmvp.base.BaseView;
 import gctraveltools.jsj.com.cn.servers1.component.ActivityComponent;
 import gctraveltools.jsj.com.cn.servers1.component.DaggerActivityComponent;
 
@@ -36,9 +35,8 @@ public abstract class BaseServerActivity<T extends BasePresenter> extends BaseAc
 
 
     protected ActivityComponent getActivityComponent() {
-        return DaggerActivityComponent.builder()
-                .appComponent(BaseApplication.getAppComponent())
-                .activityModule(new ActivityModule(this))
+        return  DaggerActivityComponent.builder()
+                .appComponent(((App) getApplicationContext()).getAppComponent())
                 .build();
     }
 

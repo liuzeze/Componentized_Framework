@@ -11,7 +11,7 @@ import com.google.gson.Gson;
 
 import java.util.List;
 
-import gctraveltools.jsj.com.cn.coremodellib.model.proto.skytrain.nano.TravelDto2;
+import gctraveltools.jsj.com.cn.servers1.bean.nano.TravelDto2;
 import gctraveltools.jsj.com.cn.servers1.R;
 import gctraveltools.jsj.com.cn.servers1.bean.SkyTrainFlightBean;
 

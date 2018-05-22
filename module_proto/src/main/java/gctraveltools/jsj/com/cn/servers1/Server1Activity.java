@@ -15,8 +15,8 @@ import com.chad.library.adapter.base.animation.ScaleInAnimation;
 import java.util.ArrayList;
 
 import gctraveltools.jsj.com.cn.commonlib.ARouterPath;
-import gctraveltools.jsj.com.cn.coremodellib.model.proto.skytrain.nano.GetTravels2Response;
-import gctraveltools.jsj.com.cn.coremodellib.model.proto.skytrain.nano.TravelDto2;
+import gctraveltools.jsj.com.cn.servers1.bean.nano.GetTravels2Response;
+import gctraveltools.jsj.com.cn.servers1.bean.nano.TravelDto2;
 import gctraveltools.jsj.com.cn.servers1.Base.BaseServerActivity;
 import gctraveltools.jsj.com.cn.servers1.adapterr.SkyTrainHomeOrderAdapter;
 import gctraveltools.jsj.com.cn.servers1.presenter.TemPresenter;
@@ -59,7 +59,8 @@ public class Server1Activity extends BaseServerActivity<TemPresenter> implements
         mAdapter.setNewData(null);
         mRecyclerview.setAdapter(mAdapter);
         mAdapter.openLoadAnimation(new ScaleInAnimation());
-        mAdapter.isFirstOnly(false);//init firstOnly state
+        //init firstOnly state
+        mAdapter.isFirstOnly(false);
         mPresenter.getTravelList();
     }
 
@@ -69,11 +70,6 @@ public class Server1Activity extends BaseServerActivity<TemPresenter> implements
         mTextView.setText(msg);
     }
 
-    @Override
-    public void stateError(String message) {
-        mProgressBar.setVisibility(View.GONE);
-        mTextView.setText(message);
-    }
 
     @Override
     public void showImgsContent(GetTravels2Response data) {

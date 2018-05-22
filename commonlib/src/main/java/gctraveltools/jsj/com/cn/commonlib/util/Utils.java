@@ -107,7 +107,7 @@ public final class Utils {
      *
      * @return the context of Application object
      */
-     static Application getApp() {
+    public  static Application getApp() {
         if (sApplication != null) return sApplication;
         throw new NullPointerException("u should init first");
     }

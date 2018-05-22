@@ -65,7 +65,7 @@ ext {
             rxandroidVersion = '2.0.1',
 
             //依赖注入(或叫ioc,用过Spring的都知道这东东)框架，用于解耦的。
-            dagger2Version = '2.5',
+            dagger2Version = '2.15',
 
             //View 注入框架
             butterknifeVersion = '8.2.1',
