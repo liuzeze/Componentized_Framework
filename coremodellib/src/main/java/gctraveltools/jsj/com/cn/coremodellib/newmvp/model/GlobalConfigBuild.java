@@ -11,6 +11,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import gctraveltools.jsj.com.cn.coremodellib.newmvp.scope.InterceptorsScope;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 
@@ -24,11 +25,12 @@ public class GlobalConfigBuild {
     private AppModule.GsonConfiguration mGsonConfiguration;
     private ClientModule.RetrofitConfiguration mRetrofitConfiguration;
     private ClientModule.OkhttpConfiguration mOkhttpConfiguration;
-
+    private List<Interceptor> netInterceptors;
 
     private GlobalConfigBuild(Builder builder) {
         this.mApiUrl = builder.apiUrl;
         this.mInterceptors = builder.interceptors;
+        this.netInterceptors = builder.netInterceptors;
         this.mGsonConfiguration = builder.gsonConfiguration;
         this.mRetrofitConfiguration = builder.retrofitConfiguration;
         this.mOkhttpConfiguration = builder.okhttpConfiguration;
@@ -44,10 +46,18 @@ public class GlobalConfigBuild {
     @Singleton
     @Provides
     @Nullable
+    @InterceptorsScope("Interceptors")
     List<Interceptor> provideInterceptors() {
         return mInterceptors;
     }
 
+    @Singleton
+    @Provides
+    @Nullable
+    @InterceptorsScope("netInterceptors")
+    List<Interceptor> provideNetInterceptors() {
+        return netInterceptors;
+    }
 
     /**
      * 提供 BaseUrl,默认使用 <"https://api.github.com/">
@@ -85,6 +95,7 @@ public class GlobalConfigBuild {
     public static final class Builder {
         private HttpUrl apiUrl;
         private List<Interceptor> interceptors;
+        private List<Interceptor> netInterceptors;
         private AppModule.GsonConfiguration gsonConfiguration;
         private ClientModule.RetrofitConfiguration retrofitConfiguration;
         private ClientModule.OkhttpConfiguration okhttpConfiguration;
@@ -105,6 +116,13 @@ public class GlobalConfigBuild {
                 interceptors = new ArrayList<>();
             }
             this.interceptors.add(interceptor);
+            return this;
+        }
+        public Builder addNetworkInterceptor(Interceptor interceptor) {
+            if (netInterceptors == null) {
+                netInterceptors = new ArrayList<>();
+            }
+            this.netInterceptors.add(interceptor);
             return this;
         }
 

@@ -13,6 +13,7 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import gctraveltools.jsj.com.cn.coremodellib.convert.FastJsonConverterFactory;
+import gctraveltools.jsj.com.cn.coremodellib.newmvp.scope.InterceptorsScope;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -69,12 +70,20 @@ public abstract class ClientModule {
      */
     @Singleton
     @Provides
-    static OkHttpClient provideClient(OkHttpClient.Builder builder, @Nullable OkhttpConfiguration configuration, @Nullable List<Interceptor> interceptors) {
+    static OkHttpClient provideClient(OkHttpClient.Builder builder, @Nullable OkhttpConfiguration configuration,
+                                      @Nullable @InterceptorsScope("Interceptors") List<Interceptor> interceptors,
+                                      @Nullable @InterceptorsScope("netInterceptors") List<Interceptor> netInterceptors) {
+
 
         //如果外部提供了interceptor的集合则遍历添加
         if (interceptors != null) {
             for (Interceptor interceptor : interceptors) {
                 builder.addInterceptor(interceptor);
+            }
+        }
+        if (netInterceptors != null) {
+            for (Interceptor interceptor : netInterceptors) {
+                builder.addNetworkInterceptor(interceptor);
             }
         }
         builder.readTimeout(TIME_OUT, TimeUnit.SECONDS);

@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/coremodellib/coremodellib.iml" filepath="$PROJECT_DIR$/coremodellib/coremodellib.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_demo/module_demo.iml" filepath="$PROJECT_DIR$/module_demo/module_demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_douban/module_douban.iml" filepath="$PROJECT_DIR$/module_douban/module_douban.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_interception/module_interception.iml" filepath="$PROJECT_DIR$/module_interception/module_interception.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_main/module_main.iml" filepath="$PROJECT_DIR$/module_main/module_main.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_proto/module_proto.iml" filepath="$PROJECT_DIR$/module_proto/module_proto.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_zh/module_zh.iml" filepath="$PROJECT_DIR$/module_zh/module_zh.iml" />

@@ -1,11 +1,13 @@
 package gctraveltools.jsj.com.cn.module_main;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.printer.module_interception.ui.NetworkFeedActivity;
 
 import java.util.ArrayList;
 
@@ -51,14 +53,14 @@ public class MainActivity extends BaseActivity {
         ((Button) findViewById(R.id.button)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                titleAnima();
+                NetworkFeedActivity.start(MainActivity.this);
+               /* titleAnima();
 
                 // 1. 应用内简单的跳转(通过URL跳转在'进阶用法'中)
                 ARouter.getInstance()
                         .build(ARouterPath.Server1Aty)
                         .navigation(MainActivity.this);
-
+*/
             }
         });
 
@@ -98,6 +100,7 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    @SuppressLint("NewApi")
     private void titleAnima() {
         if (mBoolean) {
             mView1.animate().translationY(-100).setDuration(500).start();

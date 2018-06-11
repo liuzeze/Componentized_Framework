@@ -29,7 +29,8 @@ public class DemoMainActivity extends BaseActivity {
             public void onClick(View v) {
                 startActivity(new Intent(DemoMainActivity.this, CoordinatorLayoutActivity.class));
             }
-        }); findViewById(R.id.textview2).setOnClickListener(new View.OnClickListener() {
+        });
+        findViewById(R.id.textview2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DemoMainActivity.this, DragFloatActionButtonActivity.class));
@@ -66,6 +67,12 @@ public class DemoMainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(mActivity, MagnifyingGlassActivity.class));
+            }
+        });
+        findViewById(R.id.textview8).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(mActivity, DeviceActivity.class));
             }
         });
     }

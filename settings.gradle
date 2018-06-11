@@ -1,1 +1,1 @@
-include ':app', ':commonlib', ':coremodellib', ':opensourcelib', ':module_proto', ':module_zh', ':module_douban', ':module_demo', ':module_main'
+include ':app', ':commonlib', ':coremodellib', ':opensourcelib', ':module_proto', ':module_zh', ':module_douban', ':module_demo', ':module_main', ':module_interception'

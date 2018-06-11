@@ -34,5 +34,5 @@ dependencies {
     api project(':coremodellib')
     //依赖注入 编译需要
     annotationProcessor rootProject.ext.dependencies.dagger2_compiler
-    //butterknife View 注入  编译需要
+    debugApi project(':module_interception')
 }

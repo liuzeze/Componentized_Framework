@@ -21,6 +21,7 @@ import android.content.Context;
 import com.google.gson.GsonBuilder;
 import com.google.protobuf.nano.android.converter.ProtoNanoConverterFactory;
 import com.orhanobut.logger.Logger;
+import com.printer.module_interception.reporter.OkNetworkMonitorInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -47,14 +48,15 @@ public class GlobalConfiguration implements ConfigModule {
 
 
         if (BuildConfig.DEBUG) { //Release 时,让框架不再打印 Http 请求和响应的信息
-            HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+           /* HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
                 @Override
                 public void log(String message) {
                     Logger.e(message);
                 }
             });
             loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-            builder.addInterceptor(loggingInterceptor);
+            builder.addInterceptor(loggingInterceptor);*/
+            builder.addNetworkInterceptor(new OkNetworkMonitorInterceptor());
         }
 
         builder
