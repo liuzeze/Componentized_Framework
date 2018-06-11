@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.printer.module_interception">
+
+    <application>
+
+        <activity
+            android:name=".ui.NetworkFeedActivity"
+            android:label="拦截器"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.NetworkFeedDetailActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>
