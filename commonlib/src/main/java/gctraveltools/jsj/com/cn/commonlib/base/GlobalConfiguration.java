@@ -19,21 +19,18 @@ package gctraveltools.jsj.com.cn.commonlib.base;
 import android.content.Context;
 
 import com.google.gson.GsonBuilder;
-import com.google.protobuf.nano.android.converter.ProtoNanoConverterFactory;
-import com.orhanobut.logger.Logger;
-import com.printer.module_interception.reporter.OkNetworkMonitorInterceptor;
+import com.printer.module_interception.reporter.OkNetworkMonitorInterceptor ;
 
 import java.util.concurrent.TimeUnit;
 
 import gctraveltools.jsj.com.cn.commonlib.BuildConfig;
-import gctraveltools.jsj.com.cn.commonlib.interceptor.AddCookiesInterceptor;
-import gctraveltools.jsj.com.cn.commonlib.interceptor.ReceivedCookiesInterceptor;
+import gctraveltools.jsj.com.cn.commonlib.constant.GlobalConstants;
+import gctraveltools.jsj.com.cn.commonlib.interceptor.ChangeUrlInterceptor;
 import gctraveltools.jsj.com.cn.coremodellib.newmvp.model.AppModule;
 import gctraveltools.jsj.com.cn.coremodellib.newmvp.model.ClientModule;
 import gctraveltools.jsj.com.cn.coremodellib.newmvp.model.ConfigModule;
 import gctraveltools.jsj.com.cn.coremodellib.newmvp.model.GlobalConfigBuild;
 import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
@@ -59,10 +56,14 @@ public class GlobalConfiguration implements ConfigModule {
             builder.addNetworkInterceptor(new OkNetworkMonitorInterceptor());
         }
 
+        ChangeUrlInterceptor changeUrlInterceptor = new ChangeUrlInterceptor();
+        changeUrlInterceptor.putDomain(GlobalConstants.DOUBAN_DOMAIN_NAME, BaseUrl.BASE_ZHIHU_URl);
         builder
-                .addInterceptor(new AddCookiesInterceptor())
-                .addInterceptor(new ReceivedCookiesInterceptor())
-                .baseurl(LPUrl.BASE_URl)
+                //这两行可以拦截添加cookies
+                // .addInterceptor(new AddCookiesInterceptor())
+                //.addInterceptor(new ReceivedCookiesInterceptor())
+                .addChangeUrlInterceptor(changeUrlInterceptor)
+                .baseurl(BaseUrl.BASE_DOUBAN_URl)
                 .gsonConfiguration(new AppModule.GsonConfiguration() {
                     @Override
                     public void configGson(Context context, GsonBuilder builder) {
@@ -77,7 +78,7 @@ public class GlobalConfiguration implements ConfigModule {
                     public void configRetrofit(Retrofit.Builder builder) {
                         //retrofit  信息配置
                         builder
-                              //  .addConverterFactory(ProtoNanoConverterFactory.create())
+                                //  .addConverterFactory(ProtoNanoConverterFactory.create())
                                 .addConverterFactory(ScalarsConverterFactory.create());
                         // .addConverterFactory(GsonConverterFactory.create())
                     }

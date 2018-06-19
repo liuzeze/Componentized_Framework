@@ -24,6 +24,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
+import com.printer.module_interception.ui.FloatView;
 
 import java.util.List;
 
@@ -65,7 +66,7 @@ public class AppDelegate implements App {
         ScreenAdaptation.register(application, 720);
         Utils.init(application);
 
-
+        FloatView.getInstance().init(application);
         //frasco 初始化
         Fresco.initialize(application);
     }
