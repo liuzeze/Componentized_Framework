@@ -40,7 +40,7 @@ public class ReceivedCookiesInterceptor implements Interceptor {
                         }
                     });
             Logger.e(chain.request().url().toString());
-            if (chain.request().url().toString().equals("http://123.57.172.16:8080/usercentre/userLogin.do")) {
+            if (chain.request().url().toString().equals("")) {
                 SPUtils.getInstance().put("cookie", cookieBuffer.toString());
             }
         }
