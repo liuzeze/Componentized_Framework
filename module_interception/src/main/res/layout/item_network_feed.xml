@@ -5,7 +5,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="#ffffff"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
     android:layout_marginTop="10dp">
@@ -32,7 +32,7 @@
             android:id="@+id/item_network_feed_url_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/dark_gray"
+            android:textColor="#333333"
             android:textSize="17sp"
             android:text="http://www.xxxx.comwww.xxxx.comwww.xxxx.com"
             android:layout_marginBottom="5dp"/>
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_below="@id/item_network_feed_url_textView"
-            android:textColor="@color/light_gray"
+            android:textColor="#999999"
             android:textSize="14sp"
             android:text="ContentType: json"
             android:layout_marginBottom="5dp"/>
@@ -53,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/item_network_feed_content_type_textView"
-            android:textColor="@color/green"
+            android:textColor="#8fcc73"
             android:gravity="center"
             android:textSize="14sp"
             android:text="StatusCode: 200"
@@ -63,7 +63,7 @@
             android:id="@+id/item_network_feed_method_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/dark_gray"
+            android:textColor="#F6F6F6"
             android:layout_below="@id/item_network_feed_status_textView"
             android:textSize="14sp"
             android:text="GET"
@@ -81,7 +81,7 @@
                 android:id="@+id/item_network_feed_cost_time_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/dark_gray"
+                android:textColor="#F6F6F6"
                 android:textSize="15sp"
                 android:text="900 ms"
                 android:layout_marginBottom="5dp"/>
@@ -90,7 +90,7 @@
                 android:id="@+id/item_network_feed_size_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/dark_gray"
+                android:textColor="#F6F6F6"
                 android:textSize="15sp"
                 android:text="900 KB"
                 android:layout_marginBottom="5dp"/>

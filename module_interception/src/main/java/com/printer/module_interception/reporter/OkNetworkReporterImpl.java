@@ -3,7 +3,6 @@ package com.printer.module_interception.reporter;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-
 import com.printer.module_interception.stetho.NetworkEventReporter;
 import com.printer.module_interception.stetho.ResponseHandler;
 import com.printer.module_interception.utils.DataTranslator;
@@ -11,8 +10,9 @@ import com.printer.module_interception.utils.DataTranslator;
 import java.io.InputStream;
 import java.util.concurrent.atomic.AtomicInteger;
 
-
-
+/**
+ * Created by linkaipeng on 2018/4/28.
+ */
 
 public class OkNetworkReporterImpl implements NetworkEventReporter {
 

@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout 
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" 
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_background">
 
-    <RelativeLayout
+    android:background="#F6F6F6"
+    android:orientation="vertical">
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="53dp"
-        android:background="@color/white">
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="接口日志"
+        android:textSize="15dp" />
 
-        <LinearLayout
-            android:id="@+id/network_feed_back_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:padding="10dp"
-            android:layout_marginLeft="5dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/bg_back_button"/>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-    
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/network_feed_recyclerView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:paddingTop="50dp">
 
-</LinearLayout>
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/fl_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </FrameLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/network_feed_back_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/gray_circle"
+        android:gravity="center"
+        android:text="返回"
+        android:textColor="#ffffff"
+        android:textSize="15dp" />
+</RelativeLayout>

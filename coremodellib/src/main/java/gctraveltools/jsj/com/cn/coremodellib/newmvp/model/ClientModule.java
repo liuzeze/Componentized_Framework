@@ -72,7 +72,8 @@ public abstract class ClientModule {
     @Provides
     static OkHttpClient provideClient(OkHttpClient.Builder builder, @Nullable OkhttpConfiguration configuration,
                                       @Nullable @InterceptorsScope("Interceptors") List<Interceptor> interceptors,
-                                      @Nullable @InterceptorsScope("netInterceptors") List<Interceptor> netInterceptors) {
+                                      @Nullable @InterceptorsScope("netInterceptors") List<Interceptor> netInterceptors,
+                                      @Nullable Interceptor urlInterceptor) {
 
 
         //如果外部提供了interceptor的集合则遍历添加
@@ -85,6 +86,9 @@ public abstract class ClientModule {
             for (Interceptor interceptor : netInterceptors) {
                 builder.addNetworkInterceptor(interceptor);
             }
+        }
+        if (urlInterceptor != null) {
+            builder.addInterceptor(urlInterceptor);
         }
         builder.readTimeout(TIME_OUT, TimeUnit.SECONDS);
         builder.writeTimeout(TIME_OUT, TimeUnit.SECONDS);

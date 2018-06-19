@@ -12,6 +12,9 @@ package com.printer.module_interception.stetho;
 
 import android.support.annotation.Nullable;
 
+import com.facebook.common.internal.CountingOutputStream;
+import com.printer.module_interception.stetho.NetworkEventReporter;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;

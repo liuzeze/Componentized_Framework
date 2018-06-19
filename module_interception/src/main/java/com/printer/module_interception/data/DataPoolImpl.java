@@ -2,6 +2,9 @@ package com.printer.module_interception.data;
 
 import java.util.HashMap;
 
+/**
+ * Created by linkaipeng on 2018/5/17.
+ */
 
 public class DataPoolImpl implements IDataPoolHandle {
 
@@ -63,7 +66,7 @@ public class DataPoolImpl implements IDataPoolHandle {
         if (mNetworkFeedMap == null) {
             initDataPool();
         }
-        NetworkFeedModel networkFeedModel = mNetworkFeedMap.get(requestId);
+       NetworkFeedModel networkFeedModel = mNetworkFeedMap.get(requestId);
         if (networkFeedModel == null) {
             networkFeedModel = new NetworkFeedModel();
             networkFeedModel.setRequestId(requestId);

@@ -10,6 +10,8 @@
 package com.printer.module_interception.stetho;
 
 
+import com.printer.module_interception.stetho.ExceptionUtil;
+
 import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -93,7 +95,7 @@ class GunzippingOutputStream extends FilterOutputStream {
     public Void call() throws IOException {
       GZIPInputStream in = new GZIPInputStream(mIn);
       try {
-        Util.copy(in, mOut, new byte[1024]);
+       Util.copy(in, mOut, new byte[1024]);
       } finally {
         in.close();
         mOut.close();

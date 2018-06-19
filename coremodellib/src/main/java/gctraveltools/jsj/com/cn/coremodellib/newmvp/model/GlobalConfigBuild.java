@@ -26,6 +26,8 @@ public class GlobalConfigBuild {
     private ClientModule.RetrofitConfiguration mRetrofitConfiguration;
     private ClientModule.OkhttpConfiguration mOkhttpConfiguration;
     private List<Interceptor> netInterceptors;
+    private Interceptor changeUrlInterceptor;
+
 
     private GlobalConfigBuild(Builder builder) {
         this.mApiUrl = builder.apiUrl;
@@ -34,6 +36,7 @@ public class GlobalConfigBuild {
         this.mGsonConfiguration = builder.gsonConfiguration;
         this.mRetrofitConfiguration = builder.retrofitConfiguration;
         this.mOkhttpConfiguration = builder.okhttpConfiguration;
+        this.changeUrlInterceptor = builder.changeUrlInterceptor;
 
 
     }
@@ -57,6 +60,13 @@ public class GlobalConfigBuild {
     @InterceptorsScope("netInterceptors")
     List<Interceptor> provideNetInterceptors() {
         return netInterceptors;
+    }
+
+    @Singleton
+    @Provides
+    @Nullable
+    Interceptor provideUrlnterceptors() {
+        return changeUrlInterceptor;
     }
 
     /**
@@ -83,6 +93,7 @@ public class GlobalConfigBuild {
     ClientModule.RetrofitConfiguration provideRetrofitConfiguration() {
         return mRetrofitConfiguration;
     }
+
     @Singleton
     @Provides
     @Nullable
@@ -91,11 +102,11 @@ public class GlobalConfigBuild {
     }
 
 
-
     public static final class Builder {
         private HttpUrl apiUrl;
         private List<Interceptor> interceptors;
         private List<Interceptor> netInterceptors;
+        private Interceptor changeUrlInterceptor;
         private AppModule.GsonConfiguration gsonConfiguration;
         private ClientModule.RetrofitConfiguration retrofitConfiguration;
         private ClientModule.OkhttpConfiguration okhttpConfiguration;
@@ -118,6 +129,7 @@ public class GlobalConfigBuild {
             this.interceptors.add(interceptor);
             return this;
         }
+
         public Builder addNetworkInterceptor(Interceptor interceptor) {
             if (netInterceptors == null) {
                 netInterceptors = new ArrayList<>();
@@ -130,6 +142,7 @@ public class GlobalConfigBuild {
             this.gsonConfiguration = gsonConfiguration;
             return this;
         }
+
         public Builder retrofitConfiguration(ClientModule.RetrofitConfiguration retrofitConfiguration) {
             this.retrofitConfiguration = retrofitConfiguration;
             return this;
@@ -144,6 +157,11 @@ public class GlobalConfigBuild {
             return new GlobalConfigBuild(this);
         }
 
+
+        public Builder addChangeUrlInterceptor(Interceptor changeUrlInterceptor) {
+            this.changeUrlInterceptor = changeUrlInterceptor;
+            return this;
+        }
 
     }
 

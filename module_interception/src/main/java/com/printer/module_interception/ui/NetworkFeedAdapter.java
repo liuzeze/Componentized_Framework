@@ -1,6 +1,5 @@
 package com.printer.module_interception.ui;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 
 import com.printer.module_interception.R;
 import com.printer.module_interception.data.DataPoolImpl;
@@ -21,16 +19,18 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-
+/**
+ * Created by linkaipeng on 2018/5/20.
+ */
 
 public class NetworkFeedAdapter extends RecyclerView.Adapter {
 
     private static final String TAG = "NetworkFeedAdapter";
-    private Context mContext;
+    private NetworkFeedFragment mFragment;
     private List<NetworkFeedModel> mNetworkFeedList;
 
-    public NetworkFeedAdapter(Context context) {
-        mContext = context;
+    public NetworkFeedAdapter(NetworkFeedFragment fragment) {
+        mFragment = fragment;
         mNetworkFeedList = new ArrayList(DataPoolImpl.getInstance().getNetworkFeedMap().values());
 
         try {
@@ -47,7 +47,7 @@ public class NetworkFeedAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        return new ItemViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_network_feed, viewGroup, false));
+        return new ItemViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_network_feed, viewGroup, false));
     }
 
     @Override
@@ -61,10 +61,10 @@ public class NetworkFeedAdapter extends RecyclerView.Adapter {
 
         if (networkFeedModel.getStatus() >= 400 && networkFeedModel.getStatus() <= 600) {
             itemViewHolder.mStatusView.setBackgroundResource(R.drawable.red_rect);
-            itemViewHolder.mStatusCodeTextView.setTextColor(mContext.getResources().getColor(R.color.red));
+            itemViewHolder.mStatusCodeTextView.setTextColor(mFragment.getResources().getColor(R.color.red));
         } else {
             itemViewHolder.mStatusView.setBackgroundResource(R.drawable.green_rect);
-            itemViewHolder.mStatusCodeTextView.setTextColor(mContext.getResources().getColor(R.color.green));
+            itemViewHolder.mStatusCodeTextView.setTextColor(mFragment.getResources().getColor(R.color.green));
         }
         itemViewHolder.mStatusCodeTextView.setText("Status: " + networkFeedModel.getStatus());
 
@@ -75,7 +75,7 @@ public class NetworkFeedAdapter extends RecyclerView.Adapter {
         itemViewHolder.mRootLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NetworkFeedDetailActivity.start(mContext, networkFeedModel.getRequestId());
+                mFragment.start(NetworkFeedDetailFragment.getInstance(networkFeedModel.getRequestId()));
             }
         });
 
@@ -101,13 +101,13 @@ public class NetworkFeedAdapter extends RecyclerView.Adapter {
 
         public ItemViewHolder(View itemView) {
             super(itemView);
-            mRootLayout = itemView.findViewById(R.id.item_network_feed_root_layout);
-            mUrlTextView = itemView.findViewById(R.id.item_network_feed_url_textView);
-            mStatusCodeTextView = itemView.findViewById(R.id.item_network_feed_status_textView);
-            mSizeTextView = itemView.findViewById(R.id.item_network_feed_size_textView);
-            mCostTimeTextView = itemView.findViewById(R.id.item_network_feed_cost_time_textView);
-            mMethodTextView = itemView.findViewById(R.id.item_network_feed_method_textView);
-            mContentTypeTextView = itemView.findViewById(R.id.item_network_feed_content_type_textView);
+            mRootLayout = (LinearLayout) itemView.findViewById(R.id.item_network_feed_root_layout);
+            mUrlTextView = (TextView) itemView.findViewById(R.id.item_network_feed_url_textView);
+            mStatusCodeTextView = (TextView) itemView.findViewById(R.id.item_network_feed_status_textView);
+            mSizeTextView = (TextView) itemView.findViewById(R.id.item_network_feed_size_textView);
+            mCostTimeTextView = (TextView) itemView.findViewById(R.id.item_network_feed_cost_time_textView);
+            mMethodTextView = (TextView) itemView.findViewById(R.id.item_network_feed_method_textView);
+            mContentTypeTextView = (TextView) itemView.findViewById(R.id.item_network_feed_content_type_textView);
             mStatusView = itemView.findViewById(R.id.item_network_feed_status_view);
         }
     }

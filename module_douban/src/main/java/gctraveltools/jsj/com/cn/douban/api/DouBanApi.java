@@ -18,7 +18,6 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
  * 2017/12/27	16:45	    刘泽			    新增 类
  * 2017/12/27	16:45	    刘泽			    增加yyy属性
  */
-@CustomizeScope
 public class DouBanApi {
 
     private final Retrofit mRetrofit;
@@ -26,6 +25,7 @@ public class DouBanApi {
     @Inject
     public DouBanApi(Retrofit retrofit) {
         mRetrofit = retrofit;
+        System.out.println("mRetrofit地址DouBanApi"+mRetrofit.toString());
     }
 
     public CommonSubscriber<MovieListBean> getMovieList(CommonSubscriber<MovieListBean> subscriber, String path) {

@@ -1,4 +1,4 @@
-/*
+package com.printer.module_interception.stetho;/*
  * Copyright (c) 2014-present, Facebook, Inc.
  * All rights reserved.
  *
@@ -7,7 +7,6 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-package com.printer.module_interception.stetho;
 
 public class ExceptionUtil {
   @SuppressWarnings("unchecked")

@@ -5,6 +5,7 @@ import javax.inject.Inject;
 
 import gctraveltools.jsj.com.cn.coremodellib.newmvp.observer.CommonSubscriber;
 import gctraveltools.jsj.com.cn.coremodellib.newmvp.observer.Transformer;
+import okhttp3.Interceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
@@ -21,14 +22,15 @@ public class ZhiHUApi {
 
     @Inject
     public ZhiHUApi(Retrofit retrofit) {
-        mRetrofit = retrofit.newBuilder().baseUrl("https://news-at.zhihu.com/api/4/").build();
+        //  mRetrofit = retrofit.newBuilder().baseUrl("https://news-at.zhihu.com/api/4/").build();
+        mRetrofit = retrofit/*.newBuilder().baseUrl("https://news-at.zhihu.com/api/4/").build()*/;
     }
 
 
     public CommonSubscriber<String> getNewLists(CommonSubscriber<String> subscriber) {
         return
                 mRetrofit.create(ApiService.class)
-                        .fetchNetworkData()
+                        .getNewLists()
                         .compose(Transformer.<String>switchSchedulers())
                         .subscribeWith(subscriber);
 
