@@ -6,8 +6,4 @@ package gctraveltools.jsj.com.cn.commonlib.base;
 
 public interface LPUrl {
     String BASE_URl = "http://api.douban.com/";
-    String LOGIN_URl = "/usercentre/userLogin.do";
-    String CHANGE_WORK_URl = "/posappmc/member/getMerchantMemberAllList.do";
-    String DISH_TYPE_URl = "/dishPosApp/getDishTypePosApp.do";
-
 }
